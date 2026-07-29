@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import EventFinder from "../components/EventFinder";
 import PreparationTools from "../components/PreparationTools";
+import HowItWorks from "../components/HowItWorks.jsx";
 
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
             <Hero />
             <EventFinder />
             <PreparationTools />
+            <HowItWorks />
         </>
     )
 
