@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import EventFinder from "../components/EventFinder";
 
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
         <>
             <Navbar />
             <Hero />
+            <EventFinder />
         </>
     )
 
