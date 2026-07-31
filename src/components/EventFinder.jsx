@@ -1,3 +1,8 @@
+import EventCard from "./EventCard";
+import events from "../data/events";
+
+
+
 function EventFinder() {
 
     return (
@@ -20,33 +25,17 @@ function EventFinder() {
                 <button>Personal Financial Literacy</button>
             </div>
             <div className="event-grid">
-                <article className="event-card">
-                    <div className="event-card-top">
-                        <span className="event-abbreviation">MMS</span>
-                        <span className="event-cluster">Marketing</span>
-                    </div>
-                    <h3 className="event-name">Marketing Management Series</h3>
-                    <p className="event-format">Individual Series</p>
-                    <a className="event-link" href="#">View Event</a>
-                </article>
-                <article className="event-card">
-                    <div className="event-card-top">
-                        <span className="event-abbreviation">BFS</span>
-                        <span className="event-cluster">Finance</span>
-                    </div>
-                    <h3 className="event-name">Business Finance Series</h3>
-                    <p className="event-format">Individual Series</p>
-                    <a className="event-link" href="#">View Event</a>
-                </article>
-                <article className="event-card">
-                    <div className="event-card-top">
-                        <span className="event-abbreviation">HTDM</span>
-                        <span className="event-cluster">Hospitality and Tourism</span>
-                    </div>
-                    <h3 className="event-name">Hospitality Services Team Decision Making</h3>
-                    <p className="event-format">Team Decision Making</p>
-                    <a className="event-link" href="#">View Event</a>
-                </article>
+                {events.map((event) => {
+                    return (
+                        <EventCard
+                            key={event.id}
+                            abbreviation={event.abbreviation}
+                            name={event.name}
+                            cluster={event.cluster}
+                            format={event.format}
+                        />
+                    )
+                })}
             </div>
         </section>
     )
