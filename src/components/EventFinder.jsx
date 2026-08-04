@@ -1,12 +1,22 @@
 import EventCard from "./EventCard";
 import events from "../data/events";
+import { useState } from "react"
 
 
 
 function EventFinder() {
 
-    return (
+    const [search, setSearch] = useState("")
 
+    const filteredEvents = events.filter((event) => {
+        return (
+            event.name.toLowerCase().includes(search.toLowerCase()) || 
+            event.abbreviation.toLowerCase().includes(search.toLowerCase())
+        )
+    })
+
+    return (
+ 
         <section className="event-finder">
             <div className="event-finder-heading">
                 <p className="event-finder-label">Explore Events</p>
@@ -14,7 +24,11 @@ function EventFinder() {
                 <p className="event-finder-description">Find your event and access targeted preparation tools.</p>
             </div>
             <div className="event-search">
-                <input placeholder="Search by event name or abbreviation" /> 
+                <input
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                    placeholder="Search by event name or abbreviation"
+                />
             </div>
             <div className="cluster-filters">
                 <button>Marketing</button>
@@ -24,8 +38,11 @@ function EventFinder() {
                 <button>Entrepreneurship</button>
                 <button>Personal Financial Literacy</button>
             </div>
+            {filteredEvents.length === 0 && (
+                <p>No events found</p>
+            )}
             <div className="event-grid">
-                {events.map((event) => {
+                {filteredEvents.map((event) => {
                     return (
                         <EventCard
                             key={event.id}
