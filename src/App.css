@@ -1014,3 +1014,8 @@
     grid-template-columns: 1fr;
   }
 }
+
+.cluster-filters button.active {
+    background-color:#2563eb;
+    color: white;
+}

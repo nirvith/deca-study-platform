@@ -7,13 +7,19 @@ import { useState } from "react"
 function EventFinder() {
 
     const [search, setSearch] = useState("")
+    const [selectedCluster, setSelectedCluster] = useState("All")
 
     const filteredEvents = events.filter((event) => {
-        return (
+        const matchesSearch = (
             event.name.toLowerCase().includes(search.toLowerCase()) || 
             event.abbreviation.toLowerCase().includes(search.toLowerCase())
         )
+        const matchesCluster =
+            selectedCluster === "All" || event.cluster === selectedCluster     
+            
+            return matchesSearch && matchesCluster
     })
+
 
     return (
  
@@ -31,12 +37,20 @@ function EventFinder() {
                 />
             </div>
             <div className="cluster-filters">
-                <button>Marketing</button>
-                <button>Finance</button>
-                <button>Hospitality and Tourism</button>
-                <button>Business Management</button>
-                <button>Entrepreneurship</button>
-                <button>Personal Financial Literacy</button>
+                <button onClick={() => setSelectedCluster("All")}
+                        className={selectedCluster === "All" ? "active" : ""}>All</button>
+                <button onClick={() => setSelectedCluster("Marketing")}
+                        className={selectedCluster === "Marketing" ? "active" : ""}>Marketing</button>
+                <button onClick={() => setSelectedCluster("Finance")}
+                        className={selectedCluster === "Finance" ? "active" : ""}>Finance</button>
+                <button onClick={() => setSelectedCluster("Hospitality and Tourism")}
+                        className={selectedCluster === "Hospitality and Tourism" ? "active" : ""}>Hospitality and Tourism</button>
+                <button onClick={() => setSelectedCluster("Business Management")}
+                        className={selectedCluster === "Business Management" ? "active" : ""}>Business Management</button>
+                <button onClick={() => setSelectedCluster("Entrepreneurship")}
+                        className={selectedCluster === "Entrepreneurship" ? "active" : ""}>Entrepreneurship</button>
+                <button onClick={() => setSelectedCluster("Personal Financial Literacy")}
+                        className={selectedCluster === "Personal Financial Literacy" ? "active" : ""}>Personal Financial Literacy</button>
             </div>
             {filteredEvents.length === 0 && (
                 <p>No events found</p>
