@@ -46,7 +46,7 @@ function EventFinder() {
                 <button onClick={() => setSelectedCluster("Hospitality and Tourism")}
                         className={selectedCluster === "Hospitality and Tourism" ? "active" : ""}>Hospitality and Tourism</button>
                 <button onClick={() => setSelectedCluster("Business Management")}
-                        className={selectedCluster === "Business Management" ? "active" : ""}>Business Management</button>
+                        className={selectedCluster === "Business Management and Administration" ? "active" : ""}>Business Management and Administration</button>
                 <button onClick={() => setSelectedCluster("Entrepreneurship")}
                         className={selectedCluster === "Entrepreneurship" ? "active" : ""}>Entrepreneurship</button>
                 <button onClick={() => setSelectedCluster("Personal Financial Literacy")}
