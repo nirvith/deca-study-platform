@@ -1,8 +1,9 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import EventFinder from "../components/EventFinder";
-import PreparationTools from "../components/PreparationTools";
-import HowItWorks from "../components/HowItWorks";
+import PlatformIntro from "../components/PlatformIntro";
+import RolePlayFeature from "../components/RolePlayFeature";
+import ExamFeature from "../components/ExamFeature"; 
+import StudyTools from "../components/StudyTools";
 import CallToAction from "../components/CallToAction";
 import Footer from "../components/Footer";
 
@@ -12,9 +13,10 @@ function Home() {
       <Navbar />
       <main>
         <Hero />
-        <EventFinder />
-        <PreparationTools />
-        <HowItWorks />
+        <PlatformIntro />
+        <RolePlayFeature />
+        <ExamFeature />
+        <StudyTools />
         <CallToAction />
       </main>
       <Footer />
