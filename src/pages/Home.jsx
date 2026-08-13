@@ -1,11 +1,11 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import PlatformIntro from "../components/PlatformIntro";
-import RolePlayFeature from "../components/RolePlayFeature";
-import ExamFeature from "../components/ExamFeature"; 
-import StudyTools from "../components/StudyTools";
-import CallToAction from "../components/CallToAction";
-import Footer from "../components/Footer";
+import Navbar from "../components/Navbar/Navbar";
+import Hero from "../components/home_page/Hero";
+import PlatformIntro from "../components/home_page/PlatformIntro";
+import RolePlayFeature from "../components/home_page/RolePlayFeature";
+import ExamFeature from "../components/home_page/ExamFeature"; 
+import StudyTools from "../components/home_page/StudyTools";
+import CallToAction from "../components/home_page/CallToAction";
+import Footer from "../components/home_page/Footer";
 
 function Home() {
   return (

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Navbar() {
     return (
         <nav className="navbar">
@@ -5,7 +7,8 @@ function Navbar() {
                 <span>DECA Bound</span>
             </div>
             <div className="nav-links">
-                <a href="#">Home</a>
+                <Link to="/">Home</Link>
+                <Link to="/events">Events</Link>
                 <a href="#">Practice</a>
                 <a href="#">Dashboard</a>
                 <a href="#">FAQ</a>

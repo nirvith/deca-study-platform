@@ -6,7 +6,7 @@ const events = [
     id: "act",
     abbreviation: "ACT",
     name: "Accounting Applications Series",
-    cluster: "Accounting and Finance",
+    cluster: "Finance",
     format: "Individual Series",
   },
 
@@ -14,7 +14,7 @@ const events = [
     id: "bfs",
     abbreviation: "BFS",
     name: "Business Finance Series",
-    cluster: "Accounting and Finance",
+    cluster: "Finance",
     format: "Individual Series",
   },
 
@@ -94,7 +94,7 @@ const events = [
     id: "bsm",
     abbreviation: "BSM",
     name: "Business Services Marketing Series",
-    cluster: "Management and Entrepreneurship",
+    cluster: "Entrepreneurship",
     format: "Individual Series",
   },
 
@@ -102,7 +102,7 @@ const events = [
     id: "ent",
     abbreviation: "ENT",
     name: "Entrepreneurship Series",
-    cluster: "Management and Entrepreneurship",
+    cluster: "Entrepreneurship",
     format: "Individual Series",
   },
 
@@ -110,7 +110,7 @@ const events = [
     id: "pfl",
     abbreviation: "PFL",
     name: "Personal Financial Literacy Event",
-    cluster: "Accounting and Finance",
+    cluster: "Finance",
     format: "Individual Series",
   },
 
@@ -118,7 +118,7 @@ const events = [
     id: "hrm",
     abbreviation: "HRM",
     name: "Human Resources Management Series",
-    cluster: "Management and Entrepreneurship",
+    cluster: "Entrepreneurship",
     format: "Individual Series",
   },
 
@@ -144,7 +144,7 @@ const events = [
     id: "pfn",
     abbreviation: "PFN",
     name: "Principles of Finance",
-    cluster: "Accounting and Finance",
+    cluster: "Finance",
     format: "Principles",
   },
 
@@ -186,7 +186,7 @@ const events = [
     id: "etdm",
     abbreviation: "ETDM",
     name: "Entrepreneurship Team Decision Making",
-    cluster: "Management and Entrepreneurship",
+    cluster: "Entrepreneurship",
     format: "Team Decision Making",
   },
 
@@ -194,7 +194,7 @@ const events = [
     id: "ftdm",
     abbreviation: "FTDM",
     name: "Financial Services Team Decision Making",
-    cluster: "Accounting and Finance",
+    cluster: "Finance",
     format: "Team Decision Making",
   },
 
@@ -236,7 +236,7 @@ const events = [
     id: "fce",
     abbreviation: "FCE",
     name: "Financial Consulting Event",
-    cluster: "Accounting and Finance",
+    cluster: "Finance",
     format: "Professional Selling and Consulting",
   },
 

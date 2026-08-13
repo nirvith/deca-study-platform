@@ -1,5 +1,5 @@
 import EventCard from "./EventCard";
-import events from "../data/events";
+import events from "../../data/events";
 import { useState } from "react"
 
 
@@ -49,8 +49,6 @@ function EventFinder() {
                         className={selectedCluster === "Business Management and Administration" ? "active" : ""}>Business Management and Administration</button>
                 <button onClick={() => setSelectedCluster("Entrepreneurship")}
                         className={selectedCluster === "Entrepreneurship" ? "active" : ""}>Entrepreneurship</button>
-                <button onClick={() => setSelectedCluster("Personal Financial Literacy")}
-                        className={selectedCluster === "Personal Financial Literacy" ? "active" : ""}>Personal Financial Literacy</button>
             </div>
             {filteredEvents.length === 0 && (
                 <p>No events found</p>
