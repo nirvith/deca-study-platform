@@ -2,15 +2,16 @@ import Footer from "../components/home_page/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import EventCard from "../components/Events/EventCard";
 import events from "../data/events";
+import { useState } from 'react';
 
 
 
 function Events() {
 
-    
+    const [search, setSearch] = useState("")
+    const [cluster, setCluster] = useState("All")
 
-
-
+    const filteredEvents = events.filter(event => (cluster === "All" || event.cluster === cluster) && (event.name.toLowerCase().includes(search.toLowerCase()) || event.abbreviation.toLowerCase().includes(search.toLowerCase())));
 
   return (
     <>
@@ -24,86 +25,26 @@ function Events() {
         <div className="event-content-area">
             <div className="left">
                 <h3>EVENT CLUSTERS</h3>
-                <button>All Events</button>
-                <button>Marketing</button>
-                <button>Finance</button>
-                <button>Hospitality and Tourism</button>
-                <button>Business Management & Administration</button>
-                <button>Entrepreneurship</button>
+                <button onClick={() => setCluster("All")}>All Events</button>
+                <button className={cluster === "Marketing" ? "active" : ""} onClick={() => setCluster("Marketing")}>Marketing</button>
+                <button  className={cluster === "Finance" ? "active" : ""}  onClick={() => setCluster("Finance")}>Finance</button>
+                <button  className={cluster === "Hospitality and Tourism" ? "active" : ""}  onClick={() => setCluster("Hospitality and Tourism")}>Hospitality and Tourism</button>
+                <button  className={cluster === "Business Management and Administration" ? "active" : ""}  onClick={() => setCluster("Business Management and Administration")}>Business Management and Administration</button>
+                <button  className={cluster === "Entrepreneurship" ? "active" : ""} onClick={() => setCluster("Entrepreneurship")}>Entrepreneurship</button>
             </div>
             <div className="right">
-                <input placeholder="Search events..."></input>
+                <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search events..."></input>
 
-                <section className="Marketing">
-                    <h3>Marketing</h3>
-                    {events
-                    .filter((event) => event.cluster === "Marketing")
-                    .map((event) => (
-                        <EventCard 
-                            key={event.id}
-                            abbreviation={event.abbreviation}
-                            name={event.name}
-                            cluster={event.cluster}
-                            format={event.format}
-                        />
-                    ))}
-                </section>
-                <section className="Finance">
-                    <h3>Finance</h3>
-                    {events
-                        .filter((event) => event.cluster === "Finance")
-                        .map((event) => (
-                            <EventCard
-                                key={event.id}
-                                abbreviation={event.abbreviation}
-                                name={event.name}
-                                cluster={event.cluster}
-                                format={event.format}
-                            />
-                        ))}
-                </section>
-                <section className="Hospitality and Tourism">
-                    <h3>Hospitality and Tourism</h3>
-                    {events
-                        .filter((event) => event.cluster === "Hospitality and Tourism")
-                        .map((event) => (
-                            <EventCard
-                                key={event.id}
-                                abbreviation={event.abbreviation}
-                                name={event.name}
-                                cluster={event.cluster}
-                                format={event.format}
-                            />
-                        ))}                   
-                </section>
-                <section className="Entrepreneurship">
-                    <h3>Entrepreneurship</h3>
-                    {events
-                        .filter((event) => event.cluster === "Entrepreneurship")
-                        .map((event) => (
-                            <EventCard
-                                key={event.id}
-                                abbreviation={event.abbreviation}
-                                name={event.name}
-                                cluster={event.cluster}
-                                format={event.format}
-                            />
-                        ))}                     
-                </section>
-                <section className="Business Management and Administration">
-                    <h3>Business Management and Administration</h3>
-                    {events
-                        .filter((event) => event.cluster === "Business Management and Administration")
-                        .map((event) => (
-                            <EventCard
-                                key={event.id}
-                                abbreviation={event.abbreviation}
-                                name={event.name}
-                                cluster={event.cluster}
-                                format={event.format}
-                            />
-                        ))}                    
-                </section>
+                {filteredEvents
+                  .map((event) => (
+                    <EventCard 
+                      key={event.id}
+                      abbreviation={event.abbreviation}
+                      name={event.name}
+                      cluster={event.cluster}
+                      format={event.format}
+                    />
+                ))}
             </div>
         </div>
       </section>

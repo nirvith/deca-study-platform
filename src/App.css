@@ -2018,7 +2018,7 @@ a {
 
 /* Active "All Events" button */
 
-.left button:first-of-type {
+.left button.active {
   background:
     linear-gradient(
       135deg,
@@ -2035,7 +2035,7 @@ a {
 }
 
 
-.left button:first-of-type:hover {
+.left button.active:hover {
   transform: translateX(3px);
 
   background:
