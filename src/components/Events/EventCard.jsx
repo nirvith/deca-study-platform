@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 
-function EventCard({abbreviation, name, cluster, format}) {
+
+function EventCard({id, abbreviation, name, cluster, format}) {
 
     return (
             <article className="event-card">
@@ -9,7 +11,7 @@ function EventCard({abbreviation, name, cluster, format}) {
                 </div>
                 <h3 className="event-name">{name}</h3>
                 <p className="event-format">{format}</p>
-                <a className="event-link" href="#">View Event</a>
+                <Link  className="event-link" to={`/events/${id}`}>View Event</Link>
             </article>
     )
 }

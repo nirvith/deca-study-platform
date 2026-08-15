@@ -1,261 +1,744 @@
 const events = [
-
-    // Individual Series
-
+ 
+ 
   {
     id: "act",
     abbreviation: "ACT",
     name: "Accounting Applications Series",
     cluster: "Finance",
     format: "Individual Series",
+    description: "Tests your ability to record, report, and interpret financial transactions the way a working accountant would. Role plays usually put you in front of a client or manager who needs numbers explained in plain language.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Financial statements",
+      "Accounting cycle",
+      "Budgeting",
+      "Business math",
+      "Financial analysis",
+    ],
+    bestFor: "Students who like working with numbers and want a career in accounting, auditing, or financial analysis.",
   },
-
+ 
   {
     id: "bfs",
     abbreviation: "BFS",
     name: "Business Finance Series",
     cluster: "Finance",
     format: "Individual Series",
+    description: "Focuses on how businesses raise, manage, and invest money. You'll handle scenarios involving capital decisions, cash flow problems, and financial planning for a company.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Corporate finance",
+      "Cash flow management",
+      "Investment decisions",
+      "Risk management",
+      "Financial analysis",
+    ],
+    bestFor: "Students drawn to corporate finance, banking, or investment work.",
   },
-
+ 
   {
     id: "aam",
     abbreviation: "AAM",
     name: "Apparel and Accessories Marketing Series",
     cluster: "Marketing",
     format: "Individual Series",
+    description: "Puts you in the fashion retail world — buying, merchandising, and selling clothing and accessories. Scenarios often involve seasonal planning, visual displays, or responding to shifting trends.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Merchandising",
+      "Visual display",
+      "Trend forecasting",
+      "Pricing strategy",
+      "Customer relations",
+    ],
+    bestFor: "Students interested in fashion, retail buying, or brand merchandising.",
   },
-
+ 
   {
     id: "asm",
     abbreviation: "ASM",
     name: "Automotive Services Marketing Series",
     cluster: "Marketing",
     format: "Individual Series",
+    description: "Covers the marketing and service side of the automotive industry — dealerships, repair shops, and parts suppliers. Role plays often involve building trust with customers who are skeptical about cost or necessity.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Service marketing",
+      "Customer relations",
+      "Selling",
+      "Pricing",
+      "Promotion",
+    ],
+    bestFor: "Students interested in the auto industry, service businesses, or hands-on sales.",
   },
-
+ 
   {
     id: "fms",
     abbreviation: "FMS",
     name: "Food Marketing Series",
     cluster: "Marketing",
     format: "Individual Series",
+    description: "Centers on grocery and food retail — how products get positioned, priced, and promoted to shoppers. Expect scenarios about product placement, supplier relationships, and managing perishable inventory.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Product management",
+      "Inventory control",
+      "Pricing",
+      "Promotion",
+      "Supply chain",
+    ],
+    bestFor: "Students interested in grocery retail, food brands, or consumer packaged goods.",
   },
-
+ 
   {
     id: "mcs",
     abbreviation: "MCS",
     name: "Marketing Communications Series",
     cluster: "Marketing",
     format: "Individual Series",
+    description: "All about how a brand talks to its audience — advertising, social media, public relations, and campaign strategy. Role plays typically ask you to pitch or fix a communication plan.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Advertising",
+      "Public relations",
+      "Digital marketing",
+      "Brand messaging",
+      "Media planning",
+    ],
+    bestFor: "Students interested in advertising, social media, PR, or creative strategy.",
   },
-
+ 
   {
     id: "rms",
     abbreviation: "RMS",
     name: "Retail Merchandising Series",
     cluster: "Marketing",
     format: "Individual Series",
+    description: "Focuses on running a retail operation — store layout, inventory, staffing, and the customer experience. Scenarios often involve a store underperforming for a reason you have to diagnose.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Store operations",
+      "Inventory management",
+      "Visual merchandising",
+      "Customer service",
+      "Loss prevention",
+    ],
+    bestFor: "Students interested in retail management or operations.",
   },
-
+ 
   {
     id: "sem",
     abbreviation: "SEM",
     name: "Sports and Entertainment Marketing Series",
     cluster: "Marketing",
     format: "Individual Series",
+    description: "Applies marketing to teams, venues, athletes, and entertainment properties. Expect scenarios about sponsorships, ticket sales, fan engagement, and licensing deals.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Sponsorship",
+      "Event marketing",
+      "Licensing",
+      "Fan engagement",
+      "Ticket pricing",
+    ],
+    bestFor: "Students who want to work in sports business, entertainment, or live events.",
   },
-
+ 
   {
     id: "hlm",
     abbreviation: "HLM",
     name: "Hotel and Lodging Management Series",
     cluster: "Hospitality and Tourism",
     format: "Individual Series",
+    description: "Covers the business of running hotels and lodging properties — occupancy, guest service, staffing, and revenue management. Role plays often involve a guest complaint or an operational problem.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Guest services",
+      "Revenue management",
+      "Staff supervision",
+      "Property operations",
+      "Reservations",
+    ],
+    bestFor: "Students interested in hotel management or the hospitality industry.",
   },
-
+ 
   {
     id: "qsrm",
     abbreviation: "QSRM",
     name: "Quick Serve Restaurant Management Series",
     cluster: "Hospitality and Tourism",
     format: "Individual Series",
+    description: "Focuses on fast-food and quick-service operations, where speed, consistency, and cost control decide whether a location succeeds. Scenarios often deal with staffing, throughput, or food cost.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Operations management",
+      "Food safety",
+      "Cost control",
+      "Staff scheduling",
+      "Customer service",
+    ],
+    bestFor: "Students interested in restaurant operations, franchising, or food service management.",
   },
-
+ 
   {
     id: "rfsm",
     abbreviation: "RFSM",
     name: "Restaurant and Food Service Management Series",
     cluster: "Hospitality and Tourism",
     format: "Individual Series",
+    description: "Covers full-service restaurants and catering — menu planning, service standards, staffing, and profitability. Role plays often ask you to balance guest experience against margins.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Menu planning",
+      "Food cost control",
+      "Service standards",
+      "Staff management",
+      "Health regulations",
+    ],
+    bestFor: "Students interested in restaurant ownership, culinary business, or catering.",
   },
-
+ 
   {
     id: "bsm",
     abbreviation: "BSM",
     name: "Business Services Marketing Series",
-    cluster: "Entrepreneurship",
+    cluster: "Marketing",
     format: "Individual Series",
+    description: "Deals with marketing intangible services rather than physical products — consulting, financial services, IT support, and similar. The challenge is selling something the customer can't hold.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Service marketing",
+      "Client relationships",
+      "Value proposition",
+      "B2B selling",
+      "Promotion",
+    ],
+    bestFor: "Students interested in B2B sales, consulting, or professional services.",
   },
-
+ 
   {
     id: "ent",
     abbreviation: "ENT",
     name: "Entrepreneurship Series",
     cluster: "Entrepreneurship",
     format: "Individual Series",
+    description: "Puts you in the founder's seat, making decisions about starting and growing a small business. Scenarios range from funding and hiring to pivoting when something isn't working.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Business planning",
+      "Funding and capital",
+      "Market research",
+      "Risk management",
+      "Growth strategy",
+    ],
+    bestFor: "Students who want to start their own business or work at a startup.",
   },
-
+ 
+  {
+    id: "hrm",
+    abbreviation: "HRM",
+    name: "Human Resources Management Series",
+    cluster: "Business Management and Administration",
+    format: "Individual Series",
+    description: "Focuses on the people side of business — hiring, training, performance, and workplace policy. Role plays often involve a personnel conflict or a compliance question with no clean answer.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Recruitment and hiring",
+      "Employee training",
+      "Performance management",
+      "Employment law",
+      "Workplace culture",
+    ],
+    bestFor: "Students interested in HR, organizational psychology, or people management.",
+  },
+ 
+  // ============================================
+  // PERSONAL FINANCIAL LITERACY (1 event)
+  // Own category — takes the PFL Cluster Exam
+  // 1 competitor · 10 min prep · 10 min role play
+  // ============================================
+ 
   {
     id: "pfl",
     abbreviation: "PFL",
     name: "Personal Financial Literacy Event",
     cluster: "Finance",
-    format: "Individual Series",
+    format: "Personal Financial Literacy",
+    description: "Tests how well you apply financial decision-making to a person's real life rather than a company's. Scenarios involve budgeting, credit, saving, and major purchases for an individual or family.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Budgeting",
+      "Credit and debt",
+      "Saving and investing",
+      "Insurance",
+      "Financial decision making",
+    ],
+    bestFor: "Students who want practical money skills, or a strong first event with a narrow topic list.",
   },
-
+ 
+  // ============================================
+  // PRINCIPLES EVENTS (5 events)
+  // First-year DECA members only
+  // Business Administration Core Exam · 1 competitor
+  // 10 min prep · 10 min role play
+  // ============================================
+ 
   {
-    id: "hrm",
-    abbreviation: "HRM",
-    name: "Human Resources Management Series",
-    cluster: "Entrepreneurship",
-    format: "Individual Series",
-  },
-
-  // Principles Events
-
-   {
     id: "pbm",
     abbreviation: "PBM",
     name: "Principles of Business Management and Administration",
     cluster: "Business Management and Administration",
     format: "Principles",
+    description: "An entry-level event covering how businesses are organized and run day to day. Role plays keep the scenarios broad and the concepts foundational.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Business organization",
+      "Management functions",
+      "Operations",
+      "Communication skills",
+      "Business ethics",
+    ],
+    bestFor: "First-year members who want a broad introduction before specializing.",
   },
-
+ 
   {
     id: "pen",
     abbreviation: "PEN",
     name: "Principles of Entrepreneurship",
     cluster: "Entrepreneurship",
     format: "Principles",
+    description: "An entry-level look at what it takes to start a business — spotting opportunities, understanding customers, and planning realistically.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Opportunity recognition",
+      "Business planning",
+      "Market research",
+      "Startup costs",
+      "Business ethics",
+    ],
+    bestFor: "First-year members with a business idea or an interest in startups.",
   },
-
+ 
   {
     id: "pfn",
     abbreviation: "PFN",
     name: "Principles of Finance",
     cluster: "Finance",
     format: "Principles",
+    description: "An entry-level introduction to how money moves through a business and an economy. Covers the basics of banking, credit, and financial services.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Banking services",
+      "Credit basics",
+      "Financial statements",
+      "Economics",
+      "Business math",
+    ],
+    bestFor: "First-year members curious about finance without deep accounting knowledge yet.",
   },
-
+ 
   {
     id: "pht",
     abbreviation: "PHT",
     name: "Principles of Hospitality and Tourism",
     cluster: "Hospitality and Tourism",
     format: "Principles",
+    description: "An entry-level event covering hotels, restaurants, travel, and attractions, with an emphasis on guest experience and service quality.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Guest services",
+      "Travel and tourism",
+      "Hospitality operations",
+      "Communication skills",
+      "Customer relations",
+    ],
+    bestFor: "First-year members interested in travel, hotels, or food service.",
   },
-
+ 
   {
     id: "pmk",
     abbreviation: "PMK",
     name: "Principles of Marketing",
     cluster: "Marketing",
     format: "Principles",
+    description: "An entry-level introduction to the core marketing concepts — product, price, place, and promotion — applied to straightforward business situations.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Roleplay",
+    prepMinutes: 10,
+    performanceMinutes: 10,
+    topics: [
+      "Marketing mix",
+      "Target markets",
+      "Promotion",
+      "Pricing basics",
+      "Selling",
+    ],
+    bestFor: "First-year members and the most common starting point for new DECA competitors.",
   },
-
-  // Team Decision Making
-
+ 
+  // ============================================
+  // TEAM DECISION MAKING (8 events)
+  // 100-question cluster exam · 2 competitors
+  // 30 min prep · 15 min case study presentation
+  // ============================================
+ 
   {
     id: "bltdm",
     abbreviation: "BLTDM",
     name: "Business Law and Ethics Team Decision Making",
     cluster: "Business Management and Administration",
     format: "Team Decision Making",
+    description: "Your team analyzes a case involving a legal or ethical problem — contracts, liability, discrimination, or a gray-area judgment call. Judges want to hear your reasoning, not just your conclusion.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 2,
+    performanceType: "Case Study",
+    prepMinutes: 30,
+    performanceMinutes: 15,
+    topics: [
+      "Contract law",
+      "Business ethics",
+      "Employment law",
+      "Liability",
+      "Regulatory compliance",
+    ],
+    bestFor: "Students interested in law, ethics, or arguing a position with a partner.",
   },
-
+ 
   {
     id: "btdm",
     abbreviation: "BTDM",
     name: "Buying and Merchandising Team Decision Making",
     cluster: "Marketing",
     format: "Team Decision Making",
+    description: "Your team works through a case about what to stock, how to price it, and how to move it. Expect problems involving vendors, markdowns, or inventory that isn't selling.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 2,
+    performanceType: "Case Study",
+    prepMinutes: 30,
+    performanceMinutes: 15,
+    topics: [
+      "Buying decisions",
+      "Vendor relations",
+      "Pricing strategy",
+      "Inventory planning",
+      "Merchandising",
+    ],
+    bestFor: "Pairs interested in retail strategy and the numbers behind what ends up on shelves.",
   },
-
+ 
   {
     id: "etdm",
     abbreviation: "ETDM",
     name: "Entrepreneurship Team Decision Making",
     cluster: "Entrepreneurship",
     format: "Team Decision Making",
+    description: "Your team acts as consultants or co-founders solving a problem facing a small business — usually growth, funding, or an operational bottleneck.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 2,
+    performanceType: "Case Study",
+    prepMinutes: 30,
+    performanceMinutes: 15,
+    topics: [
+      "Business strategy",
+      "Funding options",
+      "Growth planning",
+      "Market analysis",
+      "Risk management",
+    ],
+    bestFor: "Pairs who like open-ended strategy problems with more than one right answer.",
   },
-
+ 
   {
     id: "ftdm",
     abbreviation: "FTDM",
     name: "Financial Services Team Decision Making",
     cluster: "Finance",
     format: "Team Decision Making",
+    description: "Your team handles a case set in banking, lending, or investment services. Scenarios often involve advising a client or resolving a problem at a financial institution.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 2,
+    performanceType: "Case Study",
+    prepMinutes: 30,
+    performanceMinutes: 15,
+    topics: [
+      "Banking operations",
+      "Lending and credit",
+      "Investment services",
+      "Financial regulation",
+      "Client advising",
+    ],
+    bestFor: "Pairs interested in banking, wealth management, or financial consulting.",
   },
-
+ 
   {
     id: "htdm",
     abbreviation: "HTDM",
     name: "Hospitality Services Team Decision Making",
     cluster: "Hospitality and Tourism",
     format: "Team Decision Making",
+    description: "Your team solves an operational or service problem at a hotel, resort, or venue. Cases often force a tradeoff between guest satisfaction and cost.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 2,
+    performanceType: "Case Study",
+    prepMinutes: 30,
+    performanceMinutes: 15,
+    topics: [
+      "Guest services",
+      "Property operations",
+      "Staff management",
+      "Revenue management",
+      "Service recovery",
+    ],
+    bestFor: "Pairs interested in hospitality management and service-industry problem solving.",
   },
-
+ 
   {
     id: "mtdm",
     abbreviation: "MTDM",
     name: "Marketing Management Team Decision Making",
     cluster: "Marketing",
     format: "Team Decision Making",
+    description: "Your team builds or fixes a marketing strategy for a company facing a competitive challenge. Broad cases that reward structured thinking over memorized facts.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 2,
+    performanceType: "Case Study",
+    prepMinutes: 30,
+    performanceMinutes: 15,
+    topics: [
+      "Marketing strategy",
+      "Market segmentation",
+      "Competitive analysis",
+      "Product positioning",
+      "Campaign planning",
+    ],
+    bestFor: "Pairs who want the broadest marketing case study event.",
   },
-
+ 
   {
     id: "stdm",
     abbreviation: "STDM",
     name: "Sports and Entertainment Marketing Team Decision Making",
     cluster: "Marketing",
     format: "Team Decision Making",
+    description: "Your team tackles a case in sports or entertainment business — a struggling franchise, a sponsorship decision, or a venue trying to fill seats.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 2,
+    performanceType: "Case Study",
+    prepMinutes: 30,
+    performanceMinutes: 15,
+    topics: [
+      "Sponsorship strategy",
+      "Event marketing",
+      "Fan engagement",
+      "Licensing",
+      "Revenue streams",
+    ],
+    bestFor: "Pairs who follow sports or entertainment and want to compete in that world.",
   },
-
+ 
   {
     id: "ttdm",
     abbreviation: "TTDM",
     name: "Travel and Tourism Team Decision Making",
     cluster: "Hospitality and Tourism",
     format: "Team Decision Making",
+    description: "Your team works a case involving destinations, tour operations, or travel services. Often includes seasonality, marketing a location, or managing a travel disruption.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 2,
+    performanceType: "Case Study",
+    prepMinutes: 30,
+    performanceMinutes: 15,
+    topics: [
+      "Destination marketing",
+      "Tour operations",
+      "Travel services",
+      "Seasonality",
+      "Customer experience",
+    ],
+    bestFor: "Pairs interested in travel, tourism boards, or destination management.",
   },
-
-  // Professional Selling and Consulting
-
-   {
+ 
+  // PROFESSIONAL SELLING AND CONSULTING (3 events)
+  // Prepared event - research in advance, no on-site prep
+  // 100-question cluster exam - 1 competitor
+  // 15 min presentation including judge questions
+  
+ 
+  {
     id: "fce",
     abbreviation: "FCE",
     name: "Financial Consulting Event",
     cluster: "Finance",
     format: "Professional Selling and Consulting",
+    description: "You research a real financial product and client type ahead of time, then consult with a judge playing that client. Preparation happens before the conference, not on site.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Prepared Presentation",
+    prepMinutes: null,
+    performanceMinutes: 15,
+    topics: [
+      "Financial products",
+      "Client needs analysis",
+      "Consultative selling",
+      "Presentation skills",
+      "Objection handling",
+    ],
+    bestFor: "Students who prefer preparing deeply in advance over thinking on their feet.",
   },
-
+ 
   {
     id: "htps",
     abbreviation: "HTPS",
     name: "Hospitality and Tourism Professional Selling",
     cluster: "Hospitality and Tourism",
     format: "Professional Selling and Consulting",
+    description: "You prepare and deliver a sales presentation for a hospitality or travel product to a judge acting as a potential buyer. The product and target customer are announced annually.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Prepared Presentation",
+    prepMinutes: null,
+    performanceMinutes: 15,
+    topics: [
+      "Sales process",
+      "Product knowledge",
+      "Client needs analysis",
+      "Presentation skills",
+      "Closing techniques",
+    ],
+    bestFor: "Students who like public speaking and want to practice real sales skills.",
   },
-
+ 
   {
     id: "pse",
     abbreviation: "PSE",
     name: "Professional Selling Event",
     cluster: "Marketing",
     format: "Professional Selling and Consulting",
+    description: "You research an actual company and product, then pitch it to a judge playing a prospective buyer. Among the most transferable events — this is close to real B2B sales.",
+    examQuestions: 100,
+    examMinutes: 60,
+    teamSize: 1,
+    performanceType: "Prepared Presentation",
+    prepMinutes: null,
+    performanceMinutes: 15,
+    topics: [
+      "Sales process",
+      "Prospecting",
+      "Needs assessment",
+      "Presentation skills",
+      "Closing techniques",
+    ],
+    bestFor: "Students who want sales experience that translates directly to a career.",
   },
-  
+ 
 ];
-
+ 
 export default events;
