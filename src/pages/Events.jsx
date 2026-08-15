@@ -43,6 +43,7 @@ function Events() {
                       name={event.name}
                       cluster={event.cluster}
                       format={event.format}
+                      id={event.id}
                     />
                 ))}
             </div>
