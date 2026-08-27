@@ -14,8 +14,8 @@ function StudyTools() {
                 </article>
                 <article className="study-tool-card">
                     <p className="tool-number">02</p>
-                    <h3>Performance Indicators</h3>
-                    <p>Understand key indicators with clear examples and explanations</p>
+                    <h3>Cluster Exams</h3>
+                    <p>Prepare and Practice Cluster Information on all clusters</p>
                 </article>
                 <article className="study-tool-card">
                     <p className="tool-number">03</p>
