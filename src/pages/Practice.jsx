@@ -38,7 +38,6 @@ function Practice() {
                     <ul className="feature-list">
                         <li>Fresh questions generated every session</li>
                         <li>Instant explanations after every answer</li>
-                        <li>Worth {event.examWeight || "1/3"} of your total competition score</li>
                     </ul>
                     <Link className="Practice-button" to={`/practice/${eventId}/exam`}>
                         Start Exam

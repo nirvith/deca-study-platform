@@ -1,8 +1,7 @@
 import Footer from "../components/home_page/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import events from "../data/events";
-import { Navigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 
 
 function EventDetails() {
@@ -49,7 +48,9 @@ function EventDetails() {
                 <p>{event.bestFor}</p>
 
                 {/* Practice button stub */}
-                <button className="Practice-button" href="/practice">Practice</button>
+                <Link to="/events">
+                    <button className="Practice-button">Practice</button>
+                </Link>
             </section>
             <Footer />
         </>
