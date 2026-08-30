@@ -5,22 +5,23 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Missing cluster" });
   }
 
+
+  // Remember to change this prompt to the one murari is gonna give 
   const prompt = `Generate ${count} multiple-choice exam questions for a DECA ${cluster} cluster exam.
 
-Return ONLY a JSON array. No markdown, no code fences, no explanation before or after.
+    Return ONLY a JSON array. No markdown, no code fences, no explanation before or after.
 
-Each object must have exactly these keys:
-- "id": a short unique string
-- "question": the question text
-- "options": an array of exactly 4 answer strings
-- "correctIndex": a number 0-3 indicating which option is correct
-- "explanation": one or two sentences explaining why that answer is correct
-
-Questions should match the difficulty of a real DECA competitive exam for high school students. Vary the topics within the ${cluster} cluster.`;
+    Each object must have exactly these keys:
+    - "id": a short unique string
+    - "question": the question text
+    - "options": an array of exactly 4 answer strings
+    - "correctIndex": a number 0-3 indicating which option is correct
+    - "explanation": one or two sentences explaining why that answer is correct
+    Questions should match the difficulty of a real DECA competitive exam for high school students. Vary the topics within the ${cluster} cluster.`;
 
   try {
     const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent",
       {
         method: "POST",
         headers: {
