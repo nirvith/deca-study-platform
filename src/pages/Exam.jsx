@@ -30,7 +30,7 @@ function Exam() {
                 setQuestions(data.questions);
             } catch(err) {
                 setError("Using Saved questions")
-                setQuestions(fallbackQuestions.filter(q => q.cluster === event.cluster))
+                setQuestions(FallbackQuestions.filter(q => q.cluster === event.cluster))
             } finally {
                 setLoading(false)
             } 
@@ -106,7 +106,7 @@ function Exam() {
     return (
         <>
             <Navbar />
-            {error & <p className="exam-notice">{error}</p>}
+            {error && <p className="exam-notice">{error}</p>}
             <h1>Question {currentIndex+1} of {questions.length}</h1>
             <p>{question.question}</p>
             {question.options.map((option, index) => (
