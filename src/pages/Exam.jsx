@@ -1,11 +1,9 @@
 import Footer from "../components/home_page/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import events from "../data/events";
-import { Navigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
-import fallbackQuestions from "../data/fallbackQuestions";
+import { Navigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import FallbackQuestions from "../data/FallbackQuestions";
 
 
 
@@ -38,7 +36,7 @@ function Exam() {
             } 
         }
         loadQuestions();
-    }, [eventId]);
+    }, [event]);
 
 
     if (!event) {
@@ -101,13 +99,14 @@ function Exam() {
 
     function handleReset() {
         setCurrentIndex(0)
-        setScore=(0)
+        setScore(0)
         setSelectedAnswer(null)
     }
 
     return (
         <>
             <Navbar />
+            {error & <p className="exam-notice">{error}</p>}
             <h1>Question {currentIndex+1} of {questions.length}</h1>
             <p>{question.question}</p>
             {question.options.map((option, index) => (

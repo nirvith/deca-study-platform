@@ -665,9 +665,7 @@ const events = [
   },
  
   // PROFESSIONAL SELLING AND CONSULTING (3 events)
-  // Prepared event - research in advance, no on-site prep
-  // 100-question cluster exam - 1 competitor
-  // 15 min presentation including judge questions
+ 
   
  
   {
