@@ -1,25 +1,27 @@
 export default async function handler(req, res) {
-  const { cluster, count = 10 } = req.query;
 
-  if (!cluster) {
-    return res.status(400).json({ error: "Missing cluster" });
+    const { event, topics, cluster } = req.query;
+
+  if (!event) {
+    return res.status(400).json({ error: "Missing Event" });
   }
 
+  const prompt = `For a DECA ${event} roleplay in the ${cluster} cluster, covering: ${topics}.
 
-  
-  const prompt = `Generate ${count} multiple-choice exam questions for a DECA ${cluster} cluster exam.
+    Return ONLY a JSON object. No markdown, no code fences, no explanation before or after.
 
-    Return ONLY a JSON array. No markdown, no code fences, no explanation before or after.
+    
+    The object must have exactly these keys:
+    - "situation": the business context. Named fictional company, specific numbers, a concrete complication
+    - "role": who the student plays.
+    - "judgeRole": who the judge plays
+    - "task": What they need to accomplish
+    - "performanceIndicators": array of five strings 
+    Role play should match the difficulty of a real Role play at the ICDC level at DECA for high school students.`;
 
-    Each object must have exactly these keys:
-    - "id": a short unique string
-    - "question": the question text
-    - "options": an array of exactly 4 answer strings
-    - "correctIndex": a number 0-3 indicating which option is correct
-    - "explanation": one or two sentences explaining why that answer is correct
-    Questions should match the difficulty of a real DECA competitive exam for high school students. Vary the topics within the ${cluster} cluster.`;
 
-  try {
+
+    try {
     const response = await fetch(
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent",
       {
@@ -52,15 +54,22 @@ export default async function handler(req, res) {
     }
 
     const cleaned = text.replace(/```json/g, "").replace(/```/g, "").trim();
-    const questions = JSON.parse(cleaned);
+    const scenario = JSON.parse(cleaned);
 
-    if (!Array.isArray(questions) || questions.length === 0) {
-      return res.status(502).json({ error: "Bad format" });
+    if (typeof scenario !== "object" || !scenario.situation || !scenario.performanceIndicators) {
+      return res.status(502).json({ error: "Wrong Response" })
     }
 
-    return res.status(200).json({ questions });
+    return res.status(200).json({ scenario });
   } catch (err) {
     console.error("Handler error:", err);
     return res.status(500).json({ error: "Server error" });
   }
+
+
 }
+
+
+
+
+
