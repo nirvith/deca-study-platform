@@ -6,6 +6,7 @@ import EventDetails from "./pages/EventDetails";
 import Practice from "./pages/Practice";
 import Exam from "./pages/Exam";
 import Flashcards from "./pages/Flashcards";
+import RolePlay from "./pages/RolePlay";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/practice/:eventId' element={<Practice />} />
         <Route path='/practice/:eventId/exam' element={<Exam />} />
         <Route path='/practice/:eventId/flashcards' element={<Flashcards />} />
+        <Route path='/practice/:eventId/roleplay' element={<RolePlay />} />
       </Routes>
     </BrowserRouter>
   )
