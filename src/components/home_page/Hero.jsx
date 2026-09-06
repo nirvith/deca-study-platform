@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 function Hero() { 
 
     return (
@@ -13,8 +16,8 @@ function Hero() {
                     Practice role-plays, prepare for cluster exams, review performance indicators, study with flashcards, and improve with personalized AI feedback.
                 </p>
                 <div className="hero-buttons">
-                    <a className="primary-button" href="#">Start Practicing</a>
-                    <a className="secondary-button" href="#">Explore Features</a>
+                    <Link className="primary-button" to="/practice">Start Practicing</Link>
+                    <a className="secondary-button" href="#features">Explore Features</a>
                 </div>
             </div>
             <div className="hero-preview">
@@ -44,7 +47,7 @@ function Hero() {
                             </div>
                         </div>
 
-                        <button className="preview-button">Begin Role-Play</button>
+                        <Link className="preview-button" to='/practice'>Begin Role-Play</Link>
                     </div>
             </div>
         </section>

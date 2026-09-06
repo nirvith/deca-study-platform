@@ -579,6 +579,7 @@ a {
 .platform-intro {
   z-index: 2;
   margin-top: -38px;
+  scroll-margin-top: 90px;
   padding: 140px 6% 120px;
   background:
     radial-gradient(circle at 8% 18%, rgba(22, 142, 216, 0.18), transparent 27%),
@@ -645,7 +646,7 @@ a {
 .intro-benefits {
   margin-top: 58px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
 }
 
@@ -1243,7 +1244,7 @@ a {
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 45px;
 }
 

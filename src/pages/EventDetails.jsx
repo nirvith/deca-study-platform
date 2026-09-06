@@ -48,8 +48,8 @@ function EventDetails() {
                 <p>{event.bestFor}</p>
 
                 {/* Practice button stub */}
-                <Link to="/events">
-                    <button className="Practice-button">Practice</button>
+                <Link className="Practice-button" to={`/practice/${event.id}`}>
+                    Start Practicing
                 </Link>
             </section>
             <Footer />

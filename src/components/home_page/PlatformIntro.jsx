@@ -1,6 +1,6 @@
 function PlatformIntro() {
     return (
-        <section className="platform-intro">
+        <section className="platform-intro" id="features">
             <div className="platform-intro-content">
                 <p className="section-label">ONE PLATFORM. COMPLETE PREPARATION.</p>
                 <h2>Everything you need to prepare for competition</h2>

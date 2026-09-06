@@ -4,19 +4,12 @@ function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-brand">
-                <span>DECA Bound</span>
+                <span>DECA BOUND</span>
             </div>
             <div className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/events">Events</Link>
-                <Link to="/events">Practice</Link>
-                <a href="#">Dashboard</a>
-                <a href="#">FAQ</a>
-                <a href="#">Team</a>
-            </div>
-            <div className="nav-actions">
-                <a href="#">Log In</a>
-                <a href="#" className="get-started-button">Get Started</a>
+                <Link to="/practice">Practice</Link>
             </div>
         </nav>
     )

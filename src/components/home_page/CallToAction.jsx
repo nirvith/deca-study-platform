@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CallToAction() {
   return (
     <section className="final-cta">
@@ -7,18 +9,18 @@ function CallToAction() {
         <h2>Ready to master your DECA event?</h2>
 
         <p className="final-cta-description">
-          Find your event, practise with targeted resources, and build the
+          Find your event, practice with targeted resources, and build the
           confidence you need for competition.
         </p>
 
         <div className="final-cta-buttons">
-          <a className="cta-primary-button" href="#">
+          <Link className="cta-primary-button" to="/events">
             Find Your Event
-          </a>
+          </Link>
 
-          <a className="cta-secondary-button" href="#">
+          <Link className="cta-secondary-button" to="/practice">
             Explore Tools
-          </a>
+          </Link>
         </div>
       </div>
     </section>
