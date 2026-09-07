@@ -108,7 +108,7 @@ a {
 .navbar-brand {
   justify-self: start;
   color: var(--blue-700);
-  font-size: 22px;
+  font-size: var(--text-lg);
   font-weight: 850;
   letter-spacing: -0.7px;
 }
@@ -132,7 +132,7 @@ a {
 .nav-actions > a:first-child {
   position: relative;
   color: #435166;
-  font-size: 15px;
+  font-size: var(--text-sm);
   font-weight: 650;
   transition: color 180ms ease, transform 180ms ease;
 }
@@ -151,7 +151,7 @@ a {
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, var(--blue-600), var(--cyan-400));
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 220ms ease;
@@ -167,10 +167,10 @@ a {
   padding: var(--space-3) var(--space-4);
   background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 11px;
+  border-radius: var(--radius);
   color: var(--white);
   box-shadow: 0 9px 22px rgba(0, 83, 152, 0.24);
-  font-size: 15px;
+  font-size: var(--text-sm);
   font-weight: 750;
   transition: transform 220ms ease, box-shadow 220ms ease;
 }
@@ -252,10 +252,10 @@ a {
   padding: var(--space-2) var(--space-4);
   background: rgba(126, 229, 255, 0.12);
   border: 1px solid rgba(126, 229, 255, 0.34);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--cyan-300);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 800;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -265,7 +265,7 @@ a {
   max-width: 700px;
   margin: 0;
   color: var(--white);
-  font-size: clamp(48px, 5.5vw, 78px);
+  font-size: var(--text-h1);
   font-weight: 850;
   line-height: 1.03;
   letter-spacing: clamp(-3.4px, -0.25vw, -1.8px);
@@ -283,7 +283,7 @@ a {
   max-width: 650px;
   margin: var(--space-6) 0 0;
   color: #bdd3e2;
-  font-size: 19px;
+  font-size: var(--text-lg);
   line-height: 1.75;
 }
 
@@ -303,8 +303,8 @@ a {
   overflow: hidden;
   padding: var(--space-4) var(--space-5);
   border: 1px solid transparent;
-  border-radius: 11px;
-  font-size: 15px;
+  border-radius: var(--radius);
+  font-size: var(--text-sm);
   font-weight: 750;
   transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease;
 }
@@ -374,7 +374,7 @@ a {
     radial-gradient(circle at 80% 15%, rgba(126, 229, 255, 0.28), transparent 27%),
     linear-gradient(145deg, rgba(11, 78, 120, 0.92), rgba(22, 142, 216, 0.72));
   border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 30px;
+  border-radius: var(--radius);
   box-shadow: 0 38px 90px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transform: perspective(1000px) rotateY(-3deg) rotateX(1deg);
   animation: preview-arrive 950ms 120ms cubic-bezier(0.16, 1, 0.3, 1) both, panel-float 6s 1.2s ease-in-out infinite;
@@ -400,9 +400,9 @@ a {
   padding: var(--space-2) var(--space-3);
   background: rgba(4, 28, 46, 0.38);
   border: 1px solid rgba(126, 229, 255, 0.25);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: #bdefff;
-  font-size: 10px;
+  font-size: var(--text-xs);
   font-weight: 800;
   letter-spacing: 1px;
   backdrop-filter: blur(8px);
@@ -414,7 +414,7 @@ a {
   padding: var(--space-6);
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 21px;
+  border-radius: var(--radius);
   box-shadow: 0 24px 55px rgba(0, 28, 55, 0.28);
   transform: rotate(-1deg);
   transition: transform var(--ease), box-shadow var(--ease);
@@ -430,9 +430,9 @@ a {
   margin: 0 0 var(--space-4);
   padding: var(--space-2) var(--space-3);
   background: #e9f6ff;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--blue-700);
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
@@ -441,14 +441,14 @@ a {
 .preview-card h3 {
   margin: 0 0 var(--space-4);
   color: var(--ink);
-  font-size: clamp(24px, 3vw, 34px);
+  font-size: var(--text-h3);
   line-height: 1.2;
   letter-spacing: -1px;
 }
 
 .preview-card span {
   color: #687489;
-  font-size: 15px;
+  font-size: var(--text-sm);
   font-weight: 600;
 }
 
@@ -467,9 +467,9 @@ a {
 .preview-status {
   padding: var(--space-2) var(--space-3);
   background: #dcfce7;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: #15803d;
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 800;
 }
 
@@ -487,7 +487,7 @@ a {
   gap: var(--space-2);
   background: #f7fbfe;
   border: 1px solid #deebf3;
-  border-radius: 13px;
+  border-radius: var(--radius);
   transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
 }
 
@@ -499,13 +499,13 @@ a {
 
 .preview-details div span {
   color: #6b7280;
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 600;
 }
 
 .preview-details strong {
   color: var(--ink);
-  font-size: 15px;
+  font-size: var(--text-sm);
   line-height: 1.3;
 }
 
@@ -515,7 +515,7 @@ a {
   padding: var(--space-4) var(--space-5);
   background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
   border: none;
-  border-radius: 11px;
+  border-radius: var(--radius);
   color: var(--white);
   cursor: pointer;
   font-weight: 750;
@@ -540,9 +540,9 @@ a {
 .event-badge {
   padding: var(--space-2) var(--space-3);
   background: linear-gradient(135deg, #005398, #1689d4);
-  border-radius: 8px;
+  border-radius: var(--radius);
   color: #ffffff;
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 800;
   letter-spacing: 0.8px;
 }
@@ -551,9 +551,9 @@ a {
   padding: var(--space-2) var(--space-3);
   background-color: #eaf5ff;
   border: 1px solid #c8e3f7;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: #14689f;
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 700;
 }
 
@@ -565,13 +565,13 @@ a {
   background: linear-gradient(135deg, #f5faff, #edf6ff);
   border: 1px solid #d4e8f8;
   border-left: 4px solid #1689d4;
-  border-radius: 12px;
+  border-radius: var(--radius);
 }
 
 .scenario-label {
   margin: 0 0 var(--space-2);
   color: #1689d4;
-  font-size: 10px;
+  font-size: var(--text-xs);
   font-weight: 800;
   letter-spacing: 1.2px;
 }
@@ -579,7 +579,7 @@ a {
 .scenario-text {
   margin: 0;
   color: #34465a;
-  font-size: 13px;
+  font-size: var(--text-xs);
   font-weight: 500;
   line-height: 1.55;
 }
@@ -613,7 +613,7 @@ a {
     radial-gradient(circle at 8% 18%, rgba(22, 142, 216, 0.18), transparent 27%),
     radial-gradient(circle at 92% 76%, rgba(69, 212, 255, 0.14), transparent 25%),
     linear-gradient(145deg, #ffffff, #edf8ff);
-  border-radius: 42px 42px 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
   box-shadow: 0 -24px 65px rgba(2, 24, 40, 0.24);
 }
 
@@ -639,7 +639,7 @@ a {
 .section-label {
   margin: 0 0 var(--space-4);
   color: var(--blue-700);
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 850;
   letter-spacing: 1.6px;
   text-transform: uppercase;
@@ -660,14 +660,14 @@ a {
   max-width: 820px;
   margin: 0 auto;
   color: var(--ink);
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: var(--text-h2);
 }
 
 .section-description {
   max-width: 720px;
   margin: var(--space-5) auto 0;
   color: var(--muted);
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.7;
 }
 
@@ -684,7 +684,7 @@ a {
   padding: var(--space-6) var(--space-5);
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(53, 151, 211, 0.2);
-  border-radius: 18px;
+  border-radius: var(--radius);
   box-shadow: 0 14px 38px rgba(9, 71, 110, 0.08);
   backdrop-filter: blur(12px);
   transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
@@ -716,7 +716,7 @@ a {
 .benefit p {
   margin: 0;
   color: #17263a;
-  font-size: 17px;
+  font-size: var(--text-base);
   font-weight: 750;
 }
 
@@ -734,7 +734,7 @@ a {
     radial-gradient(circle at 82% 24%, rgba(69, 212, 255, 0.2), transparent 25%),
     radial-gradient(circle at 8% 84%, rgba(22, 142, 216, 0.16), transparent 28%),
     linear-gradient(135deg, #061522, #0a2943 62%, #0b4167);
-  border-radius: 38px 38px 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
   box-shadow: 0 -22px 58px rgba(3, 28, 46, 0.24);
 }
 
@@ -758,7 +758,7 @@ a {
 .roleplay-feature h2 {
   margin-bottom: 0;
   color: var(--white);
-  font-size: clamp(38px, 4vw, 58px);
+  font-size: var(--text-h2);
 }
 
 .roleplay-feature .section-label {
@@ -768,7 +768,7 @@ a {
 .feature-description {
   margin: var(--space-5) 0 0;
   color: var(--muted);
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.7;
 }
 
@@ -789,7 +789,7 @@ a {
   position: relative;
   padding-left: var(--space-6);
   color: #253044;
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 650;
   line-height: 1.5;
 }
@@ -812,7 +812,7 @@ a {
   border-radius: 50%;
   color: #087443;
   box-shadow: 0 5px 14px rgba(51, 203, 132, 0.18);
-  font-size: 13px;
+  font-size: var(--text-xs);
   font-weight: 900;
 }
 
@@ -826,7 +826,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 29px;
+  border-radius: var(--radius);
   transition: transform var(--ease), box-shadow var(--ease);
 }
 
@@ -874,7 +874,7 @@ a {
   width: 100%;
   max-width: 440px;
   padding: var(--space-6);
-  border-radius: 21px;
+  border-radius: var(--radius);
 }
 
 .roleplay-scenario-card:hover,
@@ -888,9 +888,9 @@ a {
   margin: 0 0 var(--space-5);
   padding: var(--space-2) var(--space-3);
   background: #e7f6ff;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--blue-700);
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -899,7 +899,7 @@ a {
 .roleplay-scenario-card h3 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(26px, 3vw, 36px);
+  font-size: var(--text-h3);
   line-height: 1.2;
   letter-spacing: -1px;
 }
@@ -907,7 +907,7 @@ a {
 .roleplay-scenario-card > p:last-child {
   margin: var(--space-4) 0 0;
   color: var(--muted);
-  font-size: 17px;
+  font-size: var(--text-base);
   line-height: 1.65;
 }
 
@@ -925,14 +925,14 @@ a {
     radial-gradient(circle at 92% 14%, rgba(69, 212, 255, 0.2), transparent 26%),
     radial-gradient(circle at 7% 88%, rgba(22, 142, 216, 0.12), transparent 28%),
     linear-gradient(145deg, #ffffff, #edf8ff);
-  border-radius: 38px 38px 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
   box-shadow: 0 -22px 58px rgba(2, 27, 44, 0.2);
 }
 
 .exam-feature h2 {
   margin-bottom: 0;
   color: var(--ink);
-  font-size: clamp(38px, 4vw, 58px);
+  font-size: var(--text-h2);
 }
 
 /* Exam Visual */
@@ -953,13 +953,13 @@ a {
   width: 100%;
   max-width: 470px;
   padding: var(--space-6);
-  border-radius: 21px;
+  border-radius: var(--radius);
 }
 
 .exam-question-card > p {
   margin: 0 0 var(--space-4);
   color: var(--blue-700);
-  font-size: 13px;
+  font-size: var(--text-xs);
   font-weight: 800;
   letter-spacing: 0.8px;
   text-transform: uppercase;
@@ -968,7 +968,7 @@ a {
 .exam-question-card h3 {
   margin: 0 0 var(--space-5);
   color: var(--ink);
-  font-size: clamp(22px, 2.5vw, 30px);
+  font-size: var(--text-h3);
   line-height: 1.3;
   letter-spacing: -0.8px;
 }
@@ -984,10 +984,10 @@ a {
   padding: var(--space-4) var(--space-4);
   background: #f7fbfe;
   border: 1px solid #dce8f0;
-  border-radius: 11px;
+  border-radius: var(--radius);
   color: #344054;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--text-sm);
   font-weight: 650;
   text-align: left;
   transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
@@ -1008,7 +1008,7 @@ a {
   height: 8px;
   margin-top: var(--space-6);
   background: #e4eaf0;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 }
 
 .exam-progress::after {
@@ -1031,7 +1031,7 @@ a {
     radial-gradient(circle at 10% 17%, rgba(69, 212, 255, 0.24), transparent 24%),
     radial-gradient(circle at 90% 80%, rgba(0, 83, 152, 0.15), transparent 28%),
     linear-gradient(135deg, #e9f7ff, #d8efff);
-  border-radius: 38px 38px 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
   box-shadow: 0 -22px 58px rgba(2, 27, 44, 0.15);
 }
 
@@ -1056,7 +1056,7 @@ a {
 .study-tools h2 {
   margin-bottom: 0;
   color: var(--ink);
-  font-size: clamp(38px, 4vw, 56px);
+  font-size: var(--text-h2);
 }
 
 .study-tools-grid {
@@ -1070,7 +1070,7 @@ a {
 .study-tool-card {
   padding: var(--space-6);
   border-color: rgba(35, 137, 199, 0.18);
-  border-radius: 20px;
+  border-radius: var(--radius);
 }
 
 .study-tool-card::before {
@@ -1102,9 +1102,9 @@ a {
   padding: var(--space-2) var(--space-3);
   background: linear-gradient(135deg, #e7f6ff, #d7efff);
   border: 1px solid #c9e8fa;
-  border-radius: 9px;
+  border-radius: var(--radius);
   color: var(--blue-700);
-  font-size: 13px;
+  font-size: var(--text-xs);
   font-weight: 850;
   letter-spacing: 1px;
 }
@@ -1112,7 +1112,7 @@ a {
 .study-tool-card h3 {
   margin: 0;
   color: var(--ink);
-  font-size: 24px;
+  font-size: var(--text-h3);
   line-height: 1.25;
   letter-spacing: -0.7px;
 }
@@ -1120,7 +1120,7 @@ a {
 .study-tool-card > p:last-child {
   margin: var(--space-4) 0 0;
   color: var(--muted);
-  font-size: 16px;
+  font-size: var(--text-base);
   line-height: 1.65;
 }
 
@@ -1131,7 +1131,7 @@ a {
   margin-top: calc(-1 * var(--space-6));
   padding: var(--space-9) 6% var(--space-9);
   background: #f9fcff;
-  border-radius: 38px 38px 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
   box-shadow: 0 -22px 58px rgba(2, 27, 44, 0.13);
 }
 
@@ -1149,7 +1149,7 @@ a {
     linear-gradient(135deg, #0b3657, #0b6096);
   background-size: 38px 38px, 38px 38px, auto, auto;
   border: 1px solid rgba(126, 229, 255, 0.25);
-  border-radius: 30px;
+  border-radius: var(--radius);
   box-shadow: 0 30px 70px rgba(3, 53, 87, 0.25);
 }
 
@@ -1177,9 +1177,9 @@ a {
   padding: var(--space-2) var(--space-3);
   background: rgba(126, 229, 255, 0.12);
   border: 1px solid rgba(126, 229, 255, 0.3);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   color: var(--cyan-300);
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 850;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -1189,14 +1189,14 @@ a {
   max-width: 760px;
   margin: 0 auto;
   color: var(--white);
-  font-size: clamp(38px, 4.5vw, 58px);
+  font-size: var(--text-h2);
 }
 
 .final-cta-description {
   max-width: 680px;
   margin: var(--space-5) auto 0;
   color: #c3d9e7;
-  font-size: 18px;
+  font-size: var(--text-lg);
   line-height: 1.7;
 }
 
@@ -1259,14 +1259,14 @@ a {
 .footer-brand h2 {
   margin: 0;
   color: var(--white);
-  font-size: 27px;
+  font-size: var(--text-h3);
   letter-spacing: -0.7px;
 }
 
 .footer-brand p {
   margin: var(--space-4) 0 0;
   color: #adc4d5;
-  font-size: 15px;
+  font-size: var(--text-sm);
   line-height: 1.7;
 }
 
@@ -1286,13 +1286,13 @@ a {
 .footer-link-group h3 {
   margin: 0 0 var(--space-2);
   color: var(--white);
-  font-size: 14px;
+  font-size: var(--text-sm);
   letter-spacing: 0.5px;
 }
 
 .footer-link-group a {
   color: #adc4d5;
-  font-size: 14px;
+  font-size: var(--text-sm);
   transition: color 180ms ease, transform 180ms ease;
 }
 
@@ -1313,7 +1313,7 @@ a {
 .footer-bottom p {
   margin: 0;
   color: #809db1;
-  font-size: 12px;
+  font-size: var(--text-xs);
   line-height: 1.6;
 }
 
@@ -1473,7 +1473,7 @@ a {
   }
 
   .hero-title {
-    font-size: clamp(46px, 6vw, 66px);
+    font-size: var(--text-h1);
   }
 }
 
@@ -1512,7 +1512,7 @@ a {
   .final-cta {
     margin-top: calc(-1 * var(--space-5));
     padding: var(--space-9) 5% var(--space-9);
-    border-radius: 28px 28px 0 0;
+    border-radius: var(--radius) var(--radius) 0 0;
   }
 
   .roleplay-feature,
@@ -1580,7 +1580,7 @@ a {
   }
 
   .navbar-brand {
-    font-size: 19px;
+    font-size: var(--text-lg);
   }
 
   .nav-actions > a:first-child {
@@ -1589,7 +1589,7 @@ a {
 
   .get-started-button {
     padding: var(--space-3) var(--space-4);
-    font-size: 14px;
+    font-size: var(--text-sm);
   }
 
   .hero {
@@ -1597,12 +1597,12 @@ a {
   }
 
   .hero-title {
-    font-size: clamp(42px, 13vw, 56px);
+    font-size: var(--text-h1);
     letter-spacing: -2px;
   }
 
   .hero-description {
-    font-size: 17px;
+    font-size: var(--text-lg);
     line-height: 1.65;
   }
 
@@ -1622,7 +1622,7 @@ a {
   .hero-preview {
     min-height: 345px;
     padding: var(--space-5);
-    border-radius: 23px;
+    border-radius: var(--radius);
   }
 
   .hero-preview::after {
@@ -1667,16 +1667,16 @@ a {
   .exam-feature-visual {
     min-height: 350px;
     padding: var(--space-5);
-    border-radius: 23px;
+    border-radius: var(--radius);
   }
 
   .exam-question-card h3 {
-    font-size: 22px;
+    font-size: var(--text-h3);
   }
 
   .final-cta-content {
     padding: var(--space-8) var(--space-5);
-    border-radius: 23px;
+    border-radius: var(--radius);
   }
 
   .footer {
@@ -1879,14 +1879,14 @@ a {
 
   border: 1px solid rgba(22, 142, 216, 0.2);
 
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 
   color: var(--blue-700);
 
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 850;
 
   letter-spacing: 1.5px;
@@ -1902,7 +1902,7 @@ a {
 
   color: var(--ink);
 
-  font-size: clamp(42px, 5vw, 64px);
+  font-size: var(--text-h1);
 
   font-weight: 850;
 
@@ -1934,7 +1934,7 @@ a {
 
   color: var(--muted);
 
-  font-size: 18px;
+  font-size: var(--text-lg);
 
   line-height: 1.7;
 }
@@ -1985,7 +1985,7 @@ a {
   border:
     1px solid rgba(35, 137, 199, 0.17);
 
-  border-radius: 20px;
+  border-radius: var(--radius);
 
   box-shadow:
     0 18px 45px rgba(9, 71, 110, 0.09),
@@ -2003,7 +2003,7 @@ a {
 
   color: var(--blue-700);
 
-  font-size: 11px;
+  font-size: var(--text-xs);
 
   font-weight: 850;
 
@@ -2028,13 +2028,13 @@ a {
 
   border: 1px solid transparent;
 
-  border-radius: 10px;
+  border-radius: var(--radius);
 
   color: #4a5b6d;
 
   cursor: pointer;
 
-  font-size: 13px;
+  font-size: var(--text-xs);
 
   font-weight: 650;
 
@@ -2131,13 +2131,13 @@ a {
   border:
     1px solid rgba(35, 137, 199, 0.18);
 
-  border-radius: 13px;
+  border-radius: var(--radius);
 
   color: var(--ink);
 
   outline: none;
 
-  font-size: 14px;
+  font-size: var(--text-sm);
 
   font-weight: 600;
 
@@ -2195,7 +2195,7 @@ a {
 
   color: var(--ink);
 
-  font-size: 25px;
+  font-size: var(--text-h3);
 
   font-weight: 850;
 
@@ -2226,7 +2226,7 @@ a {
       var(--cyan-400)
     );
 
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 }
 
 
@@ -2272,7 +2272,7 @@ a {
   border:
     1px solid rgba(35, 137, 199, 0.16);
 
-  border-radius: 18px;
+  border-radius: var(--radius);
 
   box-shadow:
     0 13px 35px rgba(9, 71, 110, 0.07),
@@ -2414,11 +2414,11 @@ a {
       var(--blue-500)
     );
 
-  border-radius: 8px;
+  border-radius: var(--radius);
 
   color: var(--white);
 
-  font-size: 11px;
+  font-size: var(--text-xs);
 
   font-weight: 850;
 
@@ -2442,12 +2442,12 @@ a {
   border:
     1px solid #c8e3f7;
 
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 
   color:
     #14689f;
 
-  font-size: 11px;
+  font-size: var(--text-xs);
 
   font-weight: 750;
 
@@ -2471,7 +2471,7 @@ a {
   color:
     var(--ink);
 
-  font-size: 19px;
+  font-size: var(--text-lg);
 
   font-weight: 800;
 
@@ -2495,7 +2495,7 @@ a {
   color:
     var(--muted);
 
-  font-size: 13px;
+  font-size: var(--text-xs);
 
   font-weight: 600;
 
@@ -2526,12 +2526,12 @@ a {
   border:
     1px solid #cde7f8;
 
-  border-radius: 9px;
+  border-radius: var(--radius);
 
   color:
     var(--blue-700);
 
-  font-size: 12px;
+  font-size: var(--text-xs);
 
   font-weight: 800;
 
@@ -2551,7 +2551,7 @@ a {
 
   margin-left: var(--space-2);
 
-  font-size: 14px;
+  font-size: var(--text-xs);
 
   transition:
     transform 180ms ease;
@@ -2633,8 +2633,7 @@ a {
 
 
   .events-header h2 {
-    font-size:
-      clamp(40px, 7vw, 56px);
+    font-size: var(--text-h1);
   }
 }
 
@@ -2656,8 +2655,7 @@ a {
 
 
   .events-header h2 {
-    font-size:
-      clamp(36px, 11vw, 48px);
+    font-size: var(--text-h1);
 
     letter-spacing:
       -2px;
@@ -2718,8 +2716,7 @@ a {
   .event-card {
     padding: var(--space-5);
 
-    border-radius:
-      16px;
+    border-radius: var(--radius);
   }
 
 
@@ -3011,7 +3008,7 @@ a {
 
   border: 1px solid rgba(35, 137, 199, 0.17);
 
-  border-radius: 22px;
+  border-radius: var(--radius);
 
   box-shadow:
     0 20px 50px rgba(9, 71, 110, 0.09),
@@ -3050,11 +3047,11 @@ a {
       var(--blue-500)
     );
 
-  border-radius: 9px;
+  border-radius: var(--radius);
 
   color: var(--white);
 
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 850;
 
   letter-spacing: 0.9px;
@@ -3078,11 +3075,11 @@ a {
 
   border: 1px solid #c8e3f7;
 
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 
   color: #14689f;
 
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 750;
 
   vertical-align: middle;
@@ -3096,7 +3093,7 @@ a {
 
   color: var(--ink);
 
-  font-size: clamp(30px, 4vw, 46px);
+  font-size: var(--text-h2);
   font-weight: 850;
 
   line-height: 1.1;
@@ -3125,7 +3122,7 @@ a {
 
   color: var(--blue-700);
 
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 850;
 
   letter-spacing: 1.4px;
@@ -3147,7 +3144,7 @@ a {
 
   color: #34465a;
 
-  font-size: 18px;
+  font-size: var(--text-lg);
   font-weight: 500;
 
   line-height: 1.75;
@@ -3194,7 +3191,7 @@ a {
 
   border: 1px solid rgba(35, 137, 199, 0.16);
 
-  border-radius: 15px;
+  border-radius: var(--radius);
 
   box-shadow:
     0 12px 30px rgba(9, 71, 110, 0.06),
@@ -3205,7 +3202,7 @@ a {
 
   color: var(--muted);
 
-  font-size: 12px;
+  font-size: var(--text-xs);
   font-weight: 700;
 
   line-height: 1.6;
@@ -3292,11 +3289,11 @@ a {
 
   border: 1px solid rgba(35, 137, 199, 0.18);
 
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 
   color: #14689f;
 
-  font-size: 13px;
+  font-size: var(--text-xs);
   font-weight: 700;
 
   box-shadow: 0 8px 20px rgba(9, 71, 110, 0.05);
@@ -3349,11 +3346,11 @@ a {
 
   border-left: 4px solid #1689d4;
 
-  border-radius: 0 14px 14px 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
 
   color: #34465a;
 
-  font-size: 15px;
+  font-size: var(--text-sm);
   font-weight: 600;
 
   line-height: 1.7;
@@ -3379,17 +3376,17 @@ a {
 
   .event-details-header {
     padding: var(--space-6) var(--space-5);
-    border-radius: 18px;
+    border-radius: var(--radius);
   }
 
   .event-details-header h1 {
-    font-size: clamp(26px, 8vw, 34px);
+    font-size: var(--text-h2);
     letter-spacing: -1.2px;
   }
 
   .event-details > p:first-of-type {
     margin-top: var(--space-6);
-    font-size: 16px;
+    font-size: var(--text-lg);
   }
 
   .event-details-structure {
@@ -3457,13 +3454,13 @@ a {
     );
 
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
+  border-radius: var(--radius);
 
   color: var(--white);
 
   cursor: pointer;
 
-  font-size: 15px;
+  font-size: var(--text-sm);
   font-weight: 750;
 
   box-shadow: 0 12px 28px rgba(0, 83, 152, 0.24);
@@ -3490,7 +3487,7 @@ a {
 
   margin-left: var(--space-2);
 
-  font-size: 16px;
+  font-size: var(--text-sm);
 
   transition: transform 200ms ease;
 }
