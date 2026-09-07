@@ -20,6 +20,34 @@
   --border: rgba(21, 125, 190, 0.16);
   --shadow: 0 24px 60px rgba(9, 55, 88, 0.14);
   --ease: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Spacing — the only permitted values */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Type scale — the only permitted sizes */
+  --text-xs: 13px;
+  --text-sm: 15px;
+  --text-base: 17px;
+  --text-lg: 21px;
+  --text-h3: 26px;
+  --text-h2: 40px;
+  --text-h1: 60px;
+
+  /* One radius */
+  --radius: 12px;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --container-max: 1140px;
+  --measure: 640px;
 }
 
 * {
@@ -69,7 +97,7 @@ a {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 32px;
+  gap: var(--space-6);
   background: rgba(248, 252, 255, 0.82);
   border-bottom: 1px solid rgba(40, 138, 201, 0.16);
   box-shadow: 0 10px 35px rgba(4, 31, 50, 0.08);
@@ -92,12 +120,12 @@ a {
 }
 
 .nav-links {
-  gap: 30px;
+  gap: var(--space-6);
 }
 
 .nav-actions {
   justify-self: end;
-  gap: 22px;
+  gap: var(--space-5);
 }
 
 .nav-links a,
@@ -136,7 +164,7 @@ a {
 .get-started-button {
   position: relative;
   overflow: hidden;
-  padding: 11px 19px;
+  padding: var(--space-3) var(--space-4);
   background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 11px;
@@ -159,11 +187,11 @@ a {
   isolation: isolate;
   overflow: hidden;
   min-height: calc(100vh - 72px);
-  padding: 100px 6% 130px;
+  padding: var(--space-9) 6% var(--space-9);
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   align-items: center;
-  gap: clamp(50px, 7vw, 105px);
+  gap: var(--space-8);
   background:
     radial-gradient(circle at 78% 28%, rgba(69, 212, 255, 0.3), transparent 24%),
     radial-gradient(circle at 10% 88%, rgba(22, 142, 216, 0.25), transparent 31%),
@@ -220,8 +248,8 @@ a {
 
 .hero-label {
   width: fit-content;
-  margin: 0 0 24px;
-  padding: 9px 14px;
+  margin: 0 0 var(--space-5);
+  padding: var(--space-2) var(--space-4);
   background: rgba(126, 229, 255, 0.12);
   border: 1px solid rgba(126, 229, 255, 0.34);
   border-radius: 999px;
@@ -253,17 +281,17 @@ a {
 
 .hero-description {
   max-width: 650px;
-  margin: 28px 0 0;
+  margin: var(--space-6) 0 0;
   color: #bdd3e2;
   font-size: 19px;
   line-height: 1.75;
 }
 
 .hero-buttons {
-  margin-top: 38px;
+  margin-top: var(--space-6);
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: var(--space-4);
   flex-wrap: wrap;
 }
 
@@ -273,7 +301,7 @@ a {
 .cta-secondary-button {
   position: relative;
   overflow: hidden;
-  padding: 14px 22px;
+  padding: var(--space-4) var(--space-5);
   border: 1px solid transparent;
   border-radius: 11px;
   font-size: 15px;
@@ -338,7 +366,7 @@ a {
 
 .hero-preview {
   min-height: 490px;
-  padding: 42px;
+  padding: var(--space-7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -369,7 +397,7 @@ a {
   position: absolute;
   right: 26px;
   bottom: 24px;
-  padding: 7px 10px;
+  padding: var(--space-2) var(--space-3);
   background: rgba(4, 28, 46, 0.38);
   border: 1px solid rgba(126, 229, 255, 0.25);
   border-radius: 999px;
@@ -383,7 +411,7 @@ a {
 .preview-card {
   width: 100%;
   max-width: 440px;
-  padding: 32px;
+  padding: var(--space-6);
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 21px;
@@ -399,8 +427,8 @@ a {
 
 .preview-card p {
   width: fit-content;
-  margin: 0 0 18px;
-  padding: 7px 11px;
+  margin: 0 0 var(--space-4);
+  padding: var(--space-2) var(--space-3);
   background: #e9f6ff;
   border-radius: 999px;
   color: var(--blue-700);
@@ -411,7 +439,7 @@ a {
 }
 
 .preview-card h3 {
-  margin: 0 0 18px;
+  margin: 0 0 var(--space-4);
   color: var(--ink);
   font-size: clamp(24px, 3vw, 34px);
   line-height: 1.2;
@@ -425,11 +453,11 @@ a {
 }
 
 .preview-header {
-  margin-bottom: 24px;
+  margin-bottom: var(--space-5);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .preview-header p {
@@ -437,7 +465,7 @@ a {
 }
 
 .preview-status {
-  padding: 6px 10px;
+  padding: var(--space-2) var(--space-3);
   background: #dcfce7;
   border-radius: 999px;
   color: #15803d;
@@ -446,17 +474,17 @@ a {
 }
 
 .preview-details {
-  margin-top: 26px;
+  margin-top: var(--space-5);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: var(--space-3);
 }
 
 .preview-details div {
-  padding: 16px;
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: var(--space-2);
   background: #f7fbfe;
   border: 1px solid #deebf3;
   border-radius: 13px;
@@ -483,8 +511,8 @@ a {
 
 .preview-button {
   width: 100%;
-  margin-top: 24px;
-  padding: 14px 20px;
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-5);
   background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
   border: none;
   border-radius: 11px;
@@ -505,12 +533,12 @@ a {
 .preview-event-meta {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 20px 0 12px;
+  gap: var(--space-3);
+  margin: var(--space-5) 0 var(--space-3);
 }
 
 .event-badge {
-  padding: 7px 10px;
+  padding: var(--space-2) var(--space-3);
   background: linear-gradient(135deg, #005398, #1689d4);
   border-radius: 8px;
   color: #ffffff;
@@ -520,7 +548,7 @@ a {
 }
 
 .event-cluster {
-  padding: 7px 11px;
+  padding: var(--space-2) var(--space-3);
   background-color: #eaf5ff;
   border: 1px solid #c8e3f7;
   border-radius: 999px;
@@ -532,8 +560,8 @@ a {
 /* Hero scenario preview */
 
 .scenario-preview {
-  margin-top: 18px;
-  padding: 17px 18px;
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-4);
   background: linear-gradient(135deg, #f5faff, #edf6ff);
   border: 1px solid #d4e8f8;
   border-left: 4px solid #1689d4;
@@ -541,7 +569,7 @@ a {
 }
 
 .scenario-label {
-  margin: 0 0 7px;
+  margin: 0 0 var(--space-2);
   color: #1689d4;
   font-size: 10px;
   font-weight: 800;
@@ -578,9 +606,9 @@ a {
 
 .platform-intro {
   z-index: 2;
-  margin-top: -38px;
+  margin-top: calc(-1 * var(--space-6));
   scroll-margin-top: 90px;
-  padding: 140px 6% 120px;
+  padding: var(--space-9) 6% var(--space-9);
   background:
     radial-gradient(circle at 8% 18%, rgba(22, 142, 216, 0.18), transparent 27%),
     radial-gradient(circle at 92% 76%, rgba(69, 212, 255, 0.14), transparent 25%),
@@ -609,7 +637,7 @@ a {
 }
 
 .section-label {
-  margin: 0 0 18px;
+  margin: 0 0 var(--space-4);
   color: var(--blue-700);
   font-size: 12px;
   font-weight: 850;
@@ -637,23 +665,23 @@ a {
 
 .section-description {
   max-width: 720px;
-  margin: 24px auto 0;
+  margin: var(--space-5) auto 0;
   color: var(--muted);
   font-size: 18px;
   line-height: 1.7;
 }
 
 .intro-benefits {
-  margin-top: 58px;
+  margin-top: var(--space-8);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  gap: var(--space-5);
 }
 
 .benefit {
   position: relative;
   overflow: hidden;
-  padding: 30px 24px;
+  padding: var(--space-6) var(--space-5);
   background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(53, 151, 211, 0.2);
   border-radius: 18px;
@@ -696,12 +724,12 @@ a {
 
 .roleplay-feature {
   z-index: 3;
-  margin-top: -28px;
-  padding: 140px 6% 125px;
+  margin-top: calc(-1 * var(--space-6));
+  padding: var(--space-9) 6% var(--space-9);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: clamp(60px, 8vw, 120px);
+  gap: var(--space-9);
   background:
     radial-gradient(circle at 82% 24%, rgba(69, 212, 255, 0.2), transparent 25%),
     radial-gradient(circle at 8% 84%, rgba(22, 142, 216, 0.16), transparent 28%),
@@ -738,7 +766,7 @@ a {
 }
 
 .feature-description {
-  margin: 24px 0 0;
+  margin: var(--space-5) 0 0;
   color: var(--muted);
   font-size: 18px;
   line-height: 1.7;
@@ -749,17 +777,17 @@ a {
 }
 
 .feature-list {
-  margin: 32px 0 0;
+  margin: var(--space-6) 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: var(--space-4);
   list-style: none;
 }
 
 .feature-list li {
   position: relative;
-  padding-left: 35px;
+  padding-left: var(--space-6);
   color: #253044;
   font-size: 16px;
   font-weight: 650;
@@ -794,7 +822,7 @@ a {
 .exam-feature-visual {
   position: relative;
   overflow: hidden;
-  padding: 45px;
+  padding: var(--space-7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -845,7 +873,7 @@ a {
 .roleplay-scenario-card {
   width: 100%;
   max-width: 440px;
-  padding: 36px;
+  padding: var(--space-6);
   border-radius: 21px;
 }
 
@@ -857,8 +885,8 @@ a {
 
 .roleplay-scenario-card > p:first-child {
   width: fit-content;
-  margin: 0 0 20px;
-  padding: 7px 11px;
+  margin: 0 0 var(--space-5);
+  padding: var(--space-2) var(--space-3);
   background: #e7f6ff;
   border-radius: 999px;
   color: var(--blue-700);
@@ -877,7 +905,7 @@ a {
 }
 
 .roleplay-scenario-card > p:last-child {
-  margin: 18px 0 0;
+  margin: var(--space-4) 0 0;
   color: var(--muted);
   font-size: 17px;
   line-height: 1.65;
@@ -887,12 +915,12 @@ a {
 
 .exam-feature {
   z-index: 4;
-  margin-top: -28px;
-  padding: 140px 6% 125px;
+  margin-top: calc(-1 * var(--space-6));
+  padding: var(--space-9) 6% var(--space-9);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: clamp(60px, 8vw, 120px);
+  gap: var(--space-9);
   background:
     radial-gradient(circle at 92% 14%, rgba(69, 212, 255, 0.2), transparent 26%),
     radial-gradient(circle at 7% 88%, rgba(22, 142, 216, 0.12), transparent 28%),
@@ -924,12 +952,12 @@ a {
 .exam-question-card {
   width: 100%;
   max-width: 470px;
-  padding: 34px;
+  padding: var(--space-6);
   border-radius: 21px;
 }
 
 .exam-question-card > p {
-  margin: 0 0 18px;
+  margin: 0 0 var(--space-4);
   color: var(--blue-700);
   font-size: 13px;
   font-weight: 800;
@@ -938,7 +966,7 @@ a {
 }
 
 .exam-question-card h3 {
-  margin: 0 0 26px;
+  margin: 0 0 var(--space-5);
   color: var(--ink);
   font-size: clamp(22px, 2.5vw, 30px);
   line-height: 1.3;
@@ -948,12 +976,12 @@ a {
 .exam-options {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 11px;
+  gap: var(--space-3);
 }
 
 .exam-options button {
   width: 100%;
-  padding: 14px 16px;
+  padding: var(--space-4) var(--space-4);
   background: #f7fbfe;
   border: 1px solid #dce8f0;
   border-radius: 11px;
@@ -978,7 +1006,7 @@ a {
   overflow: hidden;
   width: 100%;
   height: 8px;
-  margin-top: 28px;
+  margin-top: var(--space-6);
   background: #e4eaf0;
   border-radius: 999px;
 }
@@ -997,8 +1025,8 @@ a {
 
 .study-tools {
   z-index: 5;
-  margin-top: -28px;
-  padding: 140px 6% 125px;
+  margin-top: calc(-1 * var(--space-6));
+  padding: var(--space-9) 6% var(--space-9);
   background:
     radial-gradient(circle at 10% 17%, rgba(69, 212, 255, 0.24), transparent 24%),
     radial-gradient(circle at 90% 80%, rgba(0, 83, 152, 0.15), transparent 28%),
@@ -1033,14 +1061,14 @@ a {
 
 .study-tools-grid {
   max-width: 1180px;
-  margin: 60px auto 0;
+  margin: var(--space-8) auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: var(--space-5);
 }
 
 .study-tool-card {
-  padding: 35px;
+  padding: var(--space-6);
   border-color: rgba(35, 137, 199, 0.18);
   border-radius: 20px;
 }
@@ -1070,8 +1098,8 @@ a {
 
 .tool-number {
   width: fit-content;
-  margin: 0 0 28px;
-  padding: 8px 11px;
+  margin: 0 0 var(--space-6);
+  padding: var(--space-2) var(--space-3);
   background: linear-gradient(135deg, #e7f6ff, #d7efff);
   border: 1px solid #c9e8fa;
   border-radius: 9px;
@@ -1090,7 +1118,7 @@ a {
 }
 
 .study-tool-card > p:last-child {
-  margin: 16px 0 0;
+  margin: var(--space-4) 0 0;
   color: var(--muted);
   font-size: 16px;
   line-height: 1.65;
@@ -1100,8 +1128,8 @@ a {
 
 .final-cta {
   z-index: 6;
-  margin-top: -28px;
-  padding: 130px 6% 110px;
+  margin-top: calc(-1 * var(--space-6));
+  padding: var(--space-9) 6% var(--space-9);
   background: #f9fcff;
   border-radius: 38px 38px 0 0;
   box-shadow: 0 -22px 58px rgba(2, 27, 44, 0.13);
@@ -1112,7 +1140,7 @@ a {
   overflow: hidden;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 85px 7%;
+  padding: var(--space-9) 7%;
   text-align: center;
   background:
     linear-gradient(rgba(255, 255, 255, 0.11) 1px, transparent 1px),
@@ -1145,8 +1173,8 @@ a {
 
 .final-cta-label {
   width: fit-content;
-  margin: 0 auto 20px;
-  padding: 8px 13px;
+  margin: 0 auto var(--space-5);
+  padding: var(--space-2) var(--space-3);
   background: rgba(126, 229, 255, 0.12);
   border: 1px solid rgba(126, 229, 255, 0.3);
   border-radius: 999px;
@@ -1166,17 +1194,17 @@ a {
 
 .final-cta-description {
   max-width: 680px;
-  margin: 24px auto 0;
+  margin: var(--space-5) auto 0;
   color: #c3d9e7;
   font-size: 18px;
   line-height: 1.7;
 }
 
 .final-cta-buttons {
-  margin-top: 36px;
+  margin-top: var(--space-6);
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: var(--space-4);
   flex-wrap: wrap;
 }
 
@@ -1207,7 +1235,7 @@ a {
 .footer {
   position: relative;
   z-index: 7;
-  padding: 76px 6% 30px;
+  padding: var(--space-8) 6% var(--space-6);
   background:
     radial-gradient(circle at 10% 10%, rgba(22, 142, 216, 0.13), transparent 24%),
     linear-gradient(145deg, #061522, #0a2033);
@@ -1217,10 +1245,10 @@ a {
 .footer-main {
   max-width: 1180px;
   margin: 0 auto;
-  padding-bottom: 55px;
+  padding-bottom: var(--space-7);
   display: grid;
   grid-template-columns: 1.2fr 2fr;
-  gap: 80px;
+  gap: var(--space-9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -1236,7 +1264,7 @@ a {
 }
 
 .footer-brand p {
-  margin: 18px 0 0;
+  margin: var(--space-4) 0 0;
   color: #adc4d5;
   font-size: 15px;
   line-height: 1.7;
@@ -1245,18 +1273,18 @@ a {
 .footer-links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 45px;
+  gap: var(--space-7);
 }
 
 .footer-link-group {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 13px;
+  gap: var(--space-3);
 }
 
 .footer-link-group h3 {
-  margin: 0 0 7px;
+  margin: 0 0 var(--space-2);
   color: var(--white);
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -1275,11 +1303,11 @@ a {
 
 .footer-bottom {
   max-width: 1180px;
-  margin: 28px auto 0;
+  margin: var(--space-6) auto 0;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 40px;
+  gap: var(--space-7);
 }
 
 .footer-bottom p {
@@ -1441,7 +1469,7 @@ a {
 
   .hero {
     grid-template-columns: 1fr 0.85fr;
-    gap: 45px;
+    gap: var(--space-7);
   }
 
   .hero-title {
@@ -1456,9 +1484,9 @@ a {
 
   .hero {
     min-height: auto;
-    padding: 80px 5% 105px;
+    padding: var(--space-9) 5% var(--space-9);
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: var(--space-8);
   }
 
   .hero-content {
@@ -1482,15 +1510,15 @@ a {
   .exam-feature,
   .study-tools,
   .final-cta {
-    margin-top: -20px;
-    padding: 105px 5% 90px;
+    margin-top: calc(-1 * var(--space-5));
+    padding: var(--space-9) 5% var(--space-9);
     border-radius: 28px 28px 0 0;
   }
 
   .roleplay-feature,
   .exam-feature {
     grid-template-columns: 1fr;
-    gap: 52px;
+    gap: var(--space-7);
   }
 
   .roleplay-feature-content,
@@ -1512,17 +1540,17 @@ a {
   }
 
   .study-tools-grid {
-    margin-top: 45px;
+    margin-top: var(--space-7);
     grid-template-columns: 1fr;
   }
 
   .study-tool-card {
-    padding: 30px;
+    padding: var(--space-6);
   }
 
   .footer-main {
     grid-template-columns: 1fr;
-    gap: 45px;
+    gap: var(--space-7);
   }
 
   .footer-links {
@@ -1531,7 +1559,7 @@ a {
 
   .footer-bottom {
     flex-direction: column;
-    gap: 15px;
+    gap: var(--space-4);
   }
 
   .footer-disclaimer {
@@ -1541,7 +1569,7 @@ a {
 
 @media (max-width: 700px) {
   .intro-benefits {
-    margin-top: 42px;
+    margin-top: var(--space-7);
     grid-template-columns: 1fr;
   }
 }
@@ -1560,12 +1588,12 @@ a {
   }
 
   .get-started-button {
-    padding: 10px 14px;
+    padding: var(--space-3) var(--space-4);
     font-size: 14px;
   }
 
   .hero {
-    padding: 62px 5% 92px;
+    padding: var(--space-8) 5% var(--space-9);
   }
 
   .hero-title {
@@ -1593,7 +1621,7 @@ a {
 
   .hero-preview {
     min-height: 345px;
-    padding: 25px;
+    padding: var(--space-5);
     border-radius: 23px;
   }
 
@@ -1604,7 +1632,7 @@ a {
   .preview-card,
   .roleplay-scenario-card,
   .exam-question-card {
-    padding: 25px;
+    padding: var(--space-5);
   }
 
   .preview-details {
@@ -1616,7 +1644,7 @@ a {
   .exam-feature,
   .study-tools,
   .final-cta {
-    padding: 88px 5% 78px;
+    padding: var(--space-9) 5% var(--space-8);
   }
 
   .platform-intro h2,
@@ -1638,7 +1666,7 @@ a {
   .roleplay-feature-visual,
   .exam-feature-visual {
     min-height: 350px;
-    padding: 24px;
+    padding: var(--space-5);
     border-radius: 23px;
   }
 
@@ -1647,17 +1675,17 @@ a {
   }
 
   .final-cta-content {
-    padding: 62px 24px;
+    padding: var(--space-8) var(--space-5);
     border-radius: 23px;
   }
 
   .footer {
-    padding: 60px 5% 25px;
+    padding: var(--space-8) 5% var(--space-5);
   }
 
   .footer-links {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: var(--space-6);
   }
 }
 
@@ -1701,7 +1729,7 @@ a {
 
   min-height: calc(100vh - 72px);
 
-  padding: 90px 6% 120px;
+  padding: var(--space-9) 6% var(--space-9);
 
   background:
     radial-gradient(
@@ -1843,9 +1871,9 @@ a {
 .events-header p:first-child {
   width: fit-content;
 
-  margin: 0 auto 20px;
+  margin: 0 auto var(--space-5);
 
-  padding: 9px 14px;
+  padding: var(--space-2) var(--space-4);
 
   background: rgba(22, 142, 216, 0.09);
 
@@ -1902,7 +1930,7 @@ a {
 .events-header p:last-child {
   max-width: 680px;
 
-  margin: 24px auto 0;
+  margin: var(--space-5) auto 0;
 
   color: var(--muted);
 
@@ -1919,7 +1947,7 @@ a {
 .event-content-area {
   max-width: 1180px;
 
-  margin: 65px auto 0;
+  margin: var(--space-8) auto 0;
 
   display: grid;
 
@@ -1927,7 +1955,7 @@ a {
     245px
     minmax(0, 1fr);
 
-  gap: 42px;
+  gap: var(--space-7);
 
   align-items: start;
 
@@ -1949,7 +1977,7 @@ a {
 
   top: 96px;
 
-  padding: 25px;
+  padding: var(--space-5);
 
   background:
     rgba(255, 255, 255, 0.72);
@@ -1971,7 +1999,7 @@ a {
 /* Sidebar title */
 
 .left h3 {
-  margin: 0 0 18px;
+  margin: 0 0 var(--space-4);
 
   color: var(--blue-700);
 
@@ -1992,9 +2020,9 @@ a {
 
   width: 100%;
 
-  margin-bottom: 7px;
+  margin-bottom: var(--space-2);
 
-  padding: 12px 13px;
+  padding: var(--space-3) var(--space-3);
 
   background: transparent;
 
@@ -2093,9 +2121,9 @@ a {
 
   box-sizing: border-box;
 
-  margin-bottom: 42px;
+  margin-bottom: var(--space-7);
 
-  padding: 0 18px;
+  padding: 0 var(--space-4);
 
   background:
     rgba(255, 255, 255, 0.82);
@@ -2152,7 +2180,7 @@ a {
 .right > section {
   position: relative;
 
-  margin-bottom: 55px;
+  margin-bottom: var(--space-7);
 }
 
 
@@ -2161,9 +2189,9 @@ a {
 .right > section > h3 {
   position: relative;
 
-  margin: 0 0 20px;
+  margin: 0 0 var(--space-5);
 
-  padding-left: 17px;
+  padding-left: var(--space-4);
 
   color: var(--ink);
 
@@ -2213,7 +2241,7 @@ a {
 
   height: 1px;
 
-  margin-top: 16px;
+  margin-top: var(--space-4);
 
   background:
     linear-gradient(
@@ -2234,9 +2262,9 @@ a {
 
   overflow: hidden;
 
-  margin-bottom: 15px;
+  margin-bottom: var(--space-4);
 
-  padding: 24px 25px;
+  padding: var(--space-5) var(--space-5);
 
   background:
     rgba(255, 255, 255, 0.86);
@@ -2358,9 +2386,9 @@ a {
 
   justify-content: space-between;
 
-  gap: 12px;
+  gap: var(--space-3);
 
-  margin-bottom: 18px;
+  margin-bottom: var(--space-4);
 }
 
 
@@ -2377,7 +2405,7 @@ a {
 
   min-height: 31px;
 
-  padding: 0 10px;
+  padding: 0 var(--space-3);
 
   background:
     linear-gradient(
@@ -2406,7 +2434,7 @@ a {
 .event-cluster {
   max-width: 65%;
 
-  padding: 7px 11px;
+  padding: var(--space-2) var(--space-3);
 
   background:
     #eaf5ff;
@@ -2462,7 +2490,7 @@ a {
 
   z-index: 1;
 
-  margin: 11px 0 0;
+  margin: var(--space-3) 0 0;
 
   color:
     var(--muted);
@@ -2488,9 +2516,9 @@ a {
 
   align-items: center;
 
-  margin-top: 19px;
+  margin-top: var(--space-4);
 
-  padding: 9px 13px;
+  padding: var(--space-2) var(--space-3);
 
   background:
     #f0f8ff;
@@ -2521,7 +2549,7 @@ a {
 .event-link::after {
   content: "→";
 
-  margin-left: 7px;
+  margin-left: var(--space-2);
 
   font-size: 14px;
 
@@ -2567,8 +2595,7 @@ a {
 @media (max-width: 900px) {
 
   .main {
-    padding:
-      75px 5% 100px;
+    padding: var(--space-8) 5% var(--space-9);
   }
 
 
@@ -2576,8 +2603,7 @@ a {
     grid-template-columns:
       1fr;
 
-    gap:
-      35px;
+    gap: var(--space-6);
   }
 
 
@@ -2591,7 +2617,7 @@ a {
     grid-template-columns:
       repeat(2, 1fr);
 
-    gap: 7px;
+    gap: var(--space-2);
   }
 
 
@@ -2620,14 +2646,12 @@ a {
 @media (max-width: 600px) {
 
   .main {
-    padding:
-      60px 5% 80px;
+    padding: var(--space-8) 5% var(--space-9);
   }
 
 
   .events-header p:first-child {
-    margin-bottom:
-      16px;
+    margin-bottom: var(--space-4);
   }
 
 
@@ -2641,8 +2665,7 @@ a {
 
 
   .events-header p:last-child {
-    margin-top:
-      18px;
+    margin-top: var(--space-4);
 
     font-size:
       16px;
@@ -2653,8 +2676,7 @@ a {
 
 
   .event-content-area {
-    margin-top:
-      45px;
+    margin-top: var(--space-7);
   }
 
 
@@ -2665,14 +2687,12 @@ a {
     flex-direction:
       column;
 
-    padding:
-      20px;
+    padding: var(--space-5);
   }
 
 
   .left h3 {
-    margin-bottom:
-      10px;
+    margin-bottom: var(--space-3);
   }
 
 
@@ -2680,14 +2700,12 @@ a {
     height:
       50px;
 
-    margin-bottom:
-      35px;
+    margin-bottom: var(--space-6);
   }
 
 
   .right > section {
-    margin-bottom:
-      42px;
+    margin-bottom: var(--space-7);
   }
 
 
@@ -2698,8 +2716,7 @@ a {
 
 
   .event-card {
-    padding:
-      21px;
+    padding: var(--space-5);
 
     border-radius:
       16px;
@@ -2713,11 +2730,9 @@ a {
     flex-direction:
       column;
 
-    gap:
-      9px;
+    gap: var(--space-2);
 
-    margin-bottom:
-      15px;
+    margin-bottom: var(--space-4);
   }
 
 
@@ -2743,8 +2758,7 @@ a {
 
 
   .event-link {
-    margin-top:
-      17px;
+    margin-top: var(--space-4);
   }
 }
 
@@ -2756,11 +2770,9 @@ a {
 @media (max-width: 400px) {
 
   .main {
-    padding-left:
-      4%;
+    padding-left: 4%;
 
-    padding-right:
-      4%;
+    padding-right: 4%;
   }
 
 
@@ -2771,14 +2783,12 @@ a {
 
 
   .left {
-    padding:
-      17px;
+    padding: var(--space-4);
   }
 
 
   .event-card {
-    padding:
-      18px;
+    padding: var(--space-4);
   }
 }
 
@@ -2891,7 +2901,7 @@ a {
 
   min-height: calc(100vh - 72px);
 
-  padding: 80px 6% 120px;
+  padding: var(--space-9) 6% var(--space-9);
 
   background:
     radial-gradient(
@@ -2995,7 +3005,7 @@ a {
 */
 
 .event-details-header {
-  padding: 38px 40px;
+  padding: var(--space-6) var(--space-7);
 
   background: rgba(255, 255, 255, 0.78);
 
@@ -3029,9 +3039,9 @@ a {
   min-width: 58px;
   min-height: 34px;
 
-  margin-right: 10px;
+  margin-right: var(--space-3);
 
-  padding: 0 13px;
+  padding: 0 var(--space-3);
 
   background:
     linear-gradient(
@@ -3062,7 +3072,7 @@ a {
 
   align-items: center;
 
-  padding: 8px 13px;
+  padding: var(--space-2) var(--space-3);
 
   background: #eaf5ff;
 
@@ -3082,7 +3092,7 @@ a {
 /* Event name */
 
 .event-details-header h1 {
-  margin: 22px 0 0;
+  margin: var(--space-5) 0 0;
 
   color: var(--ink);
 
@@ -3111,7 +3121,7 @@ a {
 /* Format line */
 
 .event-details-header p {
-  margin: 14px 0 0;
+  margin: var(--space-4) 0 0;
 
   color: var(--blue-700);
 
@@ -3129,9 +3139,9 @@ a {
 */
 
 .event-details > p:first-of-type {
-  margin: 34px auto 0;
+  margin: var(--space-6) auto 0;
 
-  padding-left: 19px;
+  padding-left: var(--space-4);
 
   border-left: 3px solid var(--blue-500);
 
@@ -3156,13 +3166,13 @@ a {
 */
 
 .event-details-structure {
-  margin-top: 42px;
+  margin-top: var(--space-7);
 
   display: grid;
 
   grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
 
-  gap: 13px;
+  gap: var(--space-3);
 
   animation:
     events-content-rise
@@ -3178,7 +3188,7 @@ a {
 
   overflow: hidden;
 
-  padding: 19px 20px;
+  padding: var(--space-4) var(--space-5);
 
   background: rgba(255, 255, 255, 0.86);
 
@@ -3254,7 +3264,7 @@ a {
 */
 
 .event-details-topics {
-  margin-top: 42px;
+  margin-top: var(--space-7);
 
   padding: 0;
 
@@ -3262,7 +3272,7 @@ a {
 
   flex-wrap: wrap;
 
-  gap: 10px;
+  gap: var(--space-3);
 
   list-style: none;
 
@@ -3276,7 +3286,7 @@ a {
 
 
 .event-details-topics li {
-  padding: 11px 16px;
+  padding: var(--space-3) var(--space-4);
 
   background: rgba(255, 255, 255, 0.82);
 
@@ -3328,9 +3338,9 @@ a {
 .event-details > p:last-of-type {
   position: relative;
 
-  margin: 42px auto 0;
+  margin: var(--space-7) auto 0;
 
-  padding: 24px 26px;
+  padding: var(--space-5) var(--space-5);
 
   background:
     linear-gradient(135deg, #f5faff, #edf6ff);
@@ -3364,11 +3374,11 @@ a {
 @media (max-width: 700px) {
 
   .event-details {
-    padding: 60px 5% 90px;
+    padding: var(--space-8) 5% var(--space-9);
   }
 
   .event-details-header {
-    padding: 28px 24px;
+    padding: var(--space-6) var(--space-5);
     border-radius: 18px;
   }
 
@@ -3378,18 +3388,18 @@ a {
   }
 
   .event-details > p:first-of-type {
-    margin-top: 28px;
+    margin-top: var(--space-6);
     font-size: 16px;
   }
 
   .event-details-structure {
-    margin-top: 32px;
+    margin-top: var(--space-6);
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 
   .event-details-topics,
   .event-details > p:last-of-type {
-    margin-top: 32px;
+    margin-top: var(--space-6);
   }
 }
 
@@ -3431,12 +3441,13 @@ a {
   position: relative;
   overflow: hidden;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: max-content;
 
-  margin-top: 42px;
+  margin-top: var(--space-7);
 
-  padding: 16px 26px;
+  padding: var(--space-4) var(--space-5);
 
   background:
     linear-gradient(
@@ -3477,7 +3488,7 @@ a {
 
   order: 1;
 
-  margin-left: 9px;
+  margin-left: var(--space-2);
 
   font-size: 16px;
 
