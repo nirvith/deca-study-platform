@@ -1,7 +1,7 @@
 import Footer from "../components/home_page/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import events from "../data/events";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import FallbackQuestions from "../data/FallbackQuestions";
 
@@ -13,8 +13,8 @@ function Exam() {
     const [questions, setQuestions] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [selectedAnswer,setSelectedAnswer] = useState(null)
+    const [submitted, setSubmitted] = useState(false)
+    const [answers, setAnswers] = useState({})
     const [score, setScore] = useState(0)
     const{ eventId } = useParams()
     const event = events.find(e => e.id === eventId)
@@ -36,7 +36,7 @@ function Exam() {
             } 
         }
         loadQuestions();
-    }, [event]);
+    }, [eventId]);
 
 
     if (!event) {
@@ -66,61 +66,91 @@ function Exam() {
         )
     }
 
-    if(currentIndex >= questions.length)
-    {
-        return(
+    function handleAnswer(questionIndex, optionIndex) {
+        setAnswers({...answers, [questionIndex]: optionIndex });
+    }
+
+    function handleSubmit() {
+        let correct = 0;
+        questions.forEach((q, i) => {
+            if(answers[i] === q.correctIndex) correct++;
+        })
+        setScore(correct);
+        setSubmitted(true);
+    }
+
+    function handleReview() {
+        setSubmitted(false);
+    }
+
+    function handleRetake() {
+        window.location.reload();
+    }
+
+    if (submitted) {
+
+        const percentage = Math.round((score / questions.length) * 100);
+
+        return (
             <>
                 <Navbar />
-                <span className="score">({score} / {questions.length}) {Math.round((score / questions.length) * 100)}</span>
-                <button onClick={handleReset}>Try Again</button>
+                <section className="exam-results">
+                    <div className="exam-results-left">
+                        <p className="section-label">Exam complete</p>
+                        <h2>Here's how you did</h2>
+                        <p>Review what you missed, or run another set of questions.</p>
+
+                        <div className="results-options">
+                            <button className="results-option" onClick={handleReview}>
+                                <span className="results-option-number">1</span>
+                                Review your answers
+                            </button>
+
+                            <button className="results-option" onClick={handleRetake}>
+                                <span className="results-option-number">2</span>
+                                Take a new test on the same event
+                            </button>
+
+                            <Link className="results-option" to="/practice">
+                                <span className="results-option-number">3</span>
+                                Take a test on a different event
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className="exam-results-right">
+                        <div className="score-ring">
+                            <span className="score-ring-percent">{percentage}%</span>
+                        </div>
+                        <p className="score-detail">You got {score} out of {questions.length}</p>
+                    </div>
+                </section>
                 <Footer />
             </>
         )
     }
 
-    const question = questions[currentIndex];
-
-    function handleAnswer(index) {
-        if(selectedAnswer !== null)
-        {
-            return
-        }
-        setSelectedAnswer(index);
-        if(index === question.correctIndex)
-        {
-            setScore(score + 1)
-        }
-    }
-
-    function handleNext() {
-        setCurrentIndex(currentIndex + 1)
-        setSelectedAnswer(null)
-    }
-
-    function handleReset() {
-        setCurrentIndex(0)
-        setScore(0)
-        setSelectedAnswer(null)
-    }
-
     return (
         <>
             <Navbar />
-            {error && <p className="exam-notice">{error}</p>}
-            <h1>Question {currentIndex+1} of {questions.length}</h1>
-            <p>{question.question}</p>
-            {question.options.map((option, index) => (
-                <button key={index} onClick={() => handleAnswer(index)}>{option}</button>
-            ))}
+            {questions.map((q, qIndex) => (
+                <div className="exam-question-card" key={q.id}>
+                    <p className="exam-question-number">Question {qIndex + 1}</p>
+                    <p className="exam-question-text">{q.question}</p>
+                    <div className="exam-options">
+                        {q.options.map((option, oIndex) => (
+                            <button key={oIndex} className={answers[qIndex] === oIndex ? "exam-option selected" : "exam-option"} onClick={() => handleAnswer(qIndex, oIndex)}>
+                                <span className="exam-option-letter">{"ABCD"[oIndex]}</span>
+                                {option}
+                            </button>
 
-            {selectedAnswer != null && (
-                <div>
-                    <span>{selectedAnswer === question.correctIndex ? "Correct" : "Incorrect"}</span>
-                    <p>{question.explanation}</p>
-                    <button onClick={handleNext}>Next</button>
+                        ))}
+                    </div>
                 </div>
-            )}
-            
+            ))}
+            <button className="exam-submit" onClick={handleSubmit}>
+                Grade
+            </button>
             <Footer />
         </>
     );
