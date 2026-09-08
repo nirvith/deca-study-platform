@@ -29,23 +29,30 @@ function PracticeHub() {
         <> 
             <Navbar />
             <section className="practice-hub">
-                <h2>Choose your event</h2>
-                <p>Choose your event and then a Practice mode</p>
-                <select value={selectedCluster} onChange={handleClusterChange}>
-                    <option value="">Choose a cluster</option>
-                    {clusters.map((cluster) => (
-                        <option key={cluster} value={cluster}>{cluster}</option>
-                    ))}
-                </select>
-                <select value={selectedEventId} onChange={(e) => setSelectedEventId(e.target.value)}
-                disabled={!selectedCluster} >
-                    <option value="">Choose an Event</option>
-                    {clusterEvents.map((event) => (
-                        <option key={event.id} value={event.id}>{event.name}</option>
-                    ))}
-                </select>
-            </section>
-            {selectedEventId && (
+                <div className="practice-hub-left">
+                    <p className="section-label">Practice Hub</p>
+                    <h2>Choose your event</h2>
+                    <p>Choose your event and then a Practice mode</p>
+                    <div className="practice-controls">
+                        <select value={selectedCluster} onChange={handleClusterChange}>
+                            <option value="">Choose a cluster</option>
+                            {clusters.map((cluster) => (
+                                <option key={cluster} value={cluster}>{cluster}</option>
+                            ))}
+                        </select>
+                        <select value={selectedEventId} onChange={(e) => setSelectedEventId(e.target.value)}
+                        disabled={!selectedCluster} >
+                            <option value="">Choose an Event</option>
+                            {clusterEvents.map((event) => (
+                                <option key={event.id} value={event.id}>{event.name}</option>
+                            ))}
+                        </select>
+                    </div>
+                    {!selectedEventId && (
+                        <p className="practice-hint">Select a cluster and event above to begin.</p>
+                    )}
+                </div>
+
                 <div className="practice-modes">
 
                     {/* Cluster Exam row */}
@@ -54,9 +61,13 @@ function PracticeHub() {
                             <h3>Cluster Exam</h3>
                             <p>Multiple choice questions from your event's cluster, with explanations after every answer.</p>
                         </div>
-                        <Link className="practice-mode-link" to={`/practice/${selectedEventId}/exam`}>
-                            Start
-                        </Link>
+                        {selectedEventId ? (
+                            <Link className="practice-mode-link" to={`/practice/${selectedEventId}/exam`}>
+                                Start
+                            </Link>
+                        ) : (
+                            <span className="practice-mode-link disabled">Start</span>
+                        )}
                     </div>
                     
                     {/* Flashcards row */}
@@ -65,9 +76,13 @@ function PracticeHub() {
                             <h3>Flashcards practice</h3>
                             <p>FlashCards for each event helping students know and memorize important terms helping in vocabulary for the specified event. Flip them through to study.</p>
                         </div>
-                        <Link className="practice-mode-link" to={`/practice/${selectedEventId}/flashcards`}>
-                            Study
-                        </Link>
+                        {selectedEventId ? (
+                            <Link className="practice-mode-link" to={`/practice/${selectedEventId}/flashcards`}>
+                                Start
+                            </Link>
+                        ) : (
+                            <span className="practice-mode-link disabled">Start</span>
+                        )}
                     </div>
 
                     {/* Role play row */}
@@ -76,12 +91,16 @@ function PracticeHub() {
                             <h3>Roleplay's</h3>
                             <p>AI-generated scenarios with performance indicators, written for your specific event.</p>
                         </div>
-                        <Link className="practice-mode-link" to={`/practice/${selectedEventId}/roleplay`}>
-                            Start
-                        </Link>
+                        {selectedEventId ? (
+                            <Link className="practice-mode-link" to={`/practice/${selectedEventId}/roleplay`}>
+                                Start
+                            </Link>
+                        ) : (
+                            <span className="practice-mode-link disabled">Start</span>
+                        )}
                     </div>
                 </div>
-            )}
+            </section>
             <Footer />
         </>
     )
