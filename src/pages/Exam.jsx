@@ -51,7 +51,14 @@ function Exam() {
         return (
             <>
                 <Navbar />
-                <h2>Generating Your Questions...</h2>
+                <section className="exam-loading">
+                    <div className="exam-loading-content">
+                        <p className="section-label">Preparing your exam</p>
+                        <h2>{event.name}</h2>
+                        <p className="exam-loading-detail">Generating your questions...</p>
+                        <div className="exam-loading-spinner" aria-hidden="true" />
+                    </div>
+                </section>
                 <Footer />
             </>
         )
@@ -119,7 +126,7 @@ function Exam() {
                     </div>
 
                     <div className="exam-results-right">
-                        <div className="score-ring">
+                        <div className="score-ring" style={{"--percent": percentage}}>
                             <span className="score-ring-percent">{percentage}%</span>
                         </div>
                         <p className="score-detail">You got {score} out of {questions.length}</p>
@@ -133,24 +140,34 @@ function Exam() {
     return (
         <>
             <Navbar />
-            {questions.map((q, qIndex) => (
-                <div className="exam-question-card" key={q.id}>
-                    <p className="exam-question-number">Question {qIndex + 1}</p>
-                    <p className="exam-question-text">{q.question}</p>
-                    <div className="exam-options">
-                        {q.options.map((option, oIndex) => (
-                            <button key={oIndex} className={answers[qIndex] === oIndex ? "exam-option selected" : "exam-option"} onClick={() => handleAnswer(qIndex, oIndex)}>
-                                <span className="exam-option-letter">{"ABCD"[oIndex]}</span>
-                                {option}
-                            </button>
+            <section className="exam-page">
+                <header className="exam-header">
+                    <p className="section-label">Practice Exam</p>
+                    <h1>{event.name}</h1>
+                    <p className="exam-question-count">{questions.length} question{questions.length !== 1 ? "s" : ""}</p>
+                </header>
+                <div className="exam-questions">
+                    {questions.map((q, qIndex) => (
+                        <div className="exam-question-card" key={q.id}>
+                            <p className="exam-question-number">Question {qIndex + 1}</p>
+                            <p className="exam-question-text">{q.question}</p>
+                            <div className="exam-options">
+                                {q.options.map((option, oIndex) => (
+                                    <button key={oIndex} className={answers[qIndex] === oIndex ? "exam-option selected" : "exam-option"} onClick={() => handleAnswer(qIndex, oIndex)}>
+                                        <span className="exam-option-letter">{"ABCD"[oIndex]}</span>
+                                        {option}
+                                    </button>
 
-                        ))}
-                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                    <button className="exam-submit" onClick={handleSubmit}>
+                        Grade
+                    </button>
                 </div>
-            ))}
-            <button className="exam-submit" onClick={handleSubmit}>
-                Grade
-            </button>
+                
+            </section>
             <Footer />
         </>
     );
